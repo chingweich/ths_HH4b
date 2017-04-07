@@ -1,0 +1,33 @@
+\documentclass{article}
+
+\pagenumbering{gobble} 
+
+\usepackage{feynmp-auto}
+
+\begin{document}
+\unitlength = 1mm
+
+\begin{fmffile}{zpllbb}
+
+  \begin{center}
+    \begin{fmfgraph*}(100,70)
+      \fmfleft{aq,q}
+      \fmflabel{$\bar{q}$}{aq}
+      \fmflabel{$q$}{q}
+      \fmf{fermion}{q,qqZp,aq}
+      \fmf{boson,label=$Z'$}{qqZp,ZpZh}
+      \fmf{scalar,label=$H$}{ZpZh,Hbb}
+      \fmf{fermion}{ab,Hbb,b}
+      \fmf{boson,label=$Z$}{ZpZh,Zll}
+      \fmf{fermion}{al,Zll,l}
+      \fmfright{al,l,b,ab}
+      \fmflabel{$l^+$}{al}
+      \fmflabel{$l^-$}{l}
+      \fmflabel{$b$}{b}
+      \fmflabel{$\bar{b}$}{ab}
+    \end{fmfgraph*}
+  \end{center}
+
+\end{fmffile}
+
+\end{document}

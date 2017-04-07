@@ -1,0 +1,32 @@
+\documentclass{article}
+
+\pagenumbering{gobble}
+
+\usepackage{feynmp-auto}
+
+\begin{document}
+\unitlength = 1mm
+
+\begin{fmffile}{VV}
+
+  \begin{center}
+    \begin{fmfgraph*}(100,70)
+      \fmfleft{aq,q}
+      \fmflabel{$\bar{q}$}{aq}
+      \fmflabel{$q$}{q}
+      \fmf{fermion}{q,qgaq,qZq,aq}
+      \fmf{photon,label=$V$}{qZq,Zll}
+      \fmf{fermion}{al,Zll,l}
+      \fmf{photon,label=$V$}{qgaq,gbb}
+      \fmf{fermion}{ab,gbb,b}
+      \fmfright{al,l,b,ab}
+      \fmflabel{$l$}{al}
+      \fmflabel{$\nu$}{l}
+      \fmflabel{$q$}{b}
+      \fmflabel{$\bar{q}$}{ab}
+    \end{fmfgraph*}
+  \end{center}
+
+\end{fmffile}
+
+\end{document}

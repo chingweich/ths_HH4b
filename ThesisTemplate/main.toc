@@ -1,0 +1,5 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Analysis Strategy}{1}{chapter.5}
+\contentsline {section}{\numberline {1.1}Data and simulated samples}{1}{section.6}
