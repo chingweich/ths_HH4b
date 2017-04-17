@@ -1,0 +1,125 @@
+% Chapter Detector 
+
+\chapter{Collider and Detector} \label{Detector}
+%http://iopscience.iop.org/article/10.1088/1748-0221/3/08/S08004/pdf
+
+\section{Large Hadron Collider}%P29
+Large Hadron Collider locates Geneva region about 100 meters underground built and operated by European Organization for Nuclear Research, CERN. 
+Its circumference is 27 kms, and its two proton beams each of 7 TeV produce collisions at center-of-mass energy reaching 13 TeV in 2015, 
+which makes it both the largest and having largest energy of cernter of mass collision in the world.
+Beside, LHC also provide heavy-ion collision tp include the study of behavior of QCD under high density and parton mementum fraction. 
+When it operates, times between proton bunch crossing is 25 ns, and there will be $10^9$ events produced per second. 
+Besides, an average of 20 unelastic collision happens in a signle bunch crossing.
+It is undoubtly challenging requirement on techique not only to reduce the number of events recorded by triggers but also to alleviate the affect by unlastic vertex of lower energy.
+
+\section{The Compact Muon Solenoid Detector}
+
+As one of the detectors of LHC, the Compact Muon Solenoid Detector, CMS, shares the same aim of LHC.
+Basically, it will elucidate the phsical properities of the Higgs boson found around 125 GeV of its mass, and it will also test the mathimatical consistency of Standard Model, SM, at TeV scale.
+People also hope to find the new physic beyond SM mainly in Supersymmetry and Extra Dimension. The latter nessisates the finding of the Graviton in TeV scale.
+All researches need a delicate disign of detector, including good charged particles reconstruction to trace the vertex, good EM energy resolution, and missing transverse energy and di-jet reslotion.
+\begin{itemize}
+\item The tracker: The high granularity tracker at inner detector can well reconstruct the trace of charged particles. It is also indispensible for indentifying b-flavored jets and $\tau$'s.  
+\item The muon chamber: The muon chamber combined with tracker unformation under opposite direction magnetic field can together intertrapolate to reduce mismatching rate and find the muons from outside of detector.
+\item The calorimeters: The calorimeters facilitate the shower and detect the energy in crystals. The information will further be clustered into the energy corespoding to matched particles.
+\end{itemize}
+
+\subsection{Magnet System} 
+In order to have a resolution for charged particles in the tarckers, magnetic field must maintain to bend the charged particles. 
+Providing the magnetic field of CMS, the superconducting solenoid are installed between the calorimeters and muon chambers with diameter of 6.3 m, length of 12.5 m, and mass of 200 t. 
+Designed to have 4 T magnetic field at the center of the detector, the solenoid uses four layer based on the Ampere-turn (41.7MA-turn) and made of aluminum alloy.
+The width of the layer, $\Delta R$, is far less than its counterpart of other detectors, and its lower limit is restricted by the magnetic pressure and the material properity of aluminum.
+It also break the convention, for that the magnetic stress is shared between itself and the the outer mandrel. 
+The yoke is composed of five barrel wheels and 6 endcap disks. 
+Besides, to avoid the "quench back" effect, where the ebb currents induced in outer mandrel heat up the coil above superconducting critical tmeperature, 
+a proctecting circuit is designed and worked by either fast discharge or slow discharge throungh dumping. 
+
+\subsection{Tracker Detector} 
+Having precise reconstructed parimary and secondary vertex, the Tracker detector is designed to be at innerest part of CMS detector.
+It needs to be fast enough to collect data between 25 ns bunch crossing and high granularity enough to indentify the trajectories. 
+Two kinds of tracker detecot is used for difference purpose, the pixel trackers and the strip trackers. 
+While the former is better at determining three-dimension space and at enduring the radiation dose, 
+the latter covers larger total erea. 
+There are three cylindrical pixel detectors at radii of 4.4, 7.3 and 10.2 cm and two disks of piexl detectors at |z| of 34.5 and 46.5 cm on each side of the interaction point surrounded by strip detectors.
+They together give coverage to pseudorapidity |$\eta $| $<$ 2.5 and area of about 1 $m^2$ with total 66 million pixels whose size is 100 $\times$ 150 $\mu m^2$. 
+The strip detectors are seperated into several subsystem. Tracker Inner Barrel and Disk (TIB/TID) at radii extending to 55 cm together, composed 4 layers and 3 disk on each side, 
+provide four $r-\phi $ measurements with resoultion 23 $\mu m$ and 35 $\mu m$ by the first two layers and the others respectively. 
+Tracker Outer Barrel (TOB) ranges toward 116 cm and performs six $r-\phi $ measurements with resoultion 53 $\mu m$ and 35 $\mu m$ by the first four layers and the others respectively.
+In addition, Tarcker EndCap (TEC) gives antoher 9 measurements on $\phi $ by its nine layers installed at 124 cm $<$ |z| $<$ 282 cm.
+ 
+\subsubsection{Pixel Trackers}
+%https://twiki.cern.ch/twiki/pub/Main/UndergradElog2014/pixelDetectors.pdf
+The pixel trackers are constitued by pn-junction operated in depletion. 
+When particles pass depletion zone, electron-hole pairs they induced will produce signal current and will further be amplfied and read out. 
+To take the high density radiation dose into account, a n$+$-doped electrodes in n-doped substratrate is chosed as sensor. 
+Another advantage of the n-on-n concept is a guard ring can be made around the sensor to prevent voltage break-down in air (1.2V/$\mu $m). 
+The isolation between electrode prevents electrode from shortening after radiation. Open p-stop and moderate p-spary are inplemented on disks and barrel respectively.
+
+\subsubsection{Strip Trackers}
+The elements in the trackers are single-side p-on-n silicon micro-strip sensors. 
+Besieds, the six inch wafers are used instead of four inch wafers to reduce the cost. 
+As the bulit-on surface charge of $\langle$100$\rangle$ crystal orientation of n substratrate is smaller than $\langle$111$\rangle$ one, 
+the $\langle$100$\rangle$ is chosed to maintain the capacitance after irradiation.
+
+\subsection{Electromagnetic Calorimeter} 
+%118
+The electromagnetic calorimeters, ECAL, is used to measure the energy of electromagnetic, EM, particles through EM shower. 
+In the other hand, they can reconstruct the mother particles of electrons and photons inderectly.
+The system composes ECAL Barrel (EB) in |$\eta $| $<$ 1.479 and ECAL Endcap (EE) in 1.479 $<$ |$\eta $| $<$ 3.0. 
+Lead-tungstate crystals (PbWO4) are chosed as the scintillator where shower happens.
+Its short Radiation length (0.89cm) and Moliere radius (2.2cm) is appropriate for compact space in CMS.
+The photon detectors are set on the back on each crystal. 
+Avalanche photodiodes are used for EB, while vacuum phototriodes are used for EE. 
+Besides, the preshower detector (ES) is installed in front of EE where 1.653 $<$ |$\eta $| $<$ 2.6. 
+There are two layers: lead radiators and silicon strip sensor.
+The EE is mainly used to identify $\pi ^0$ and assists the identification of electrons against minimum ionizing particles.
+ 
+
+\subsection{Hadron Calorimeter} 
+The hadron calorimeters meaure the energy of hadrons, and they are substantial to detect the neutrinos or exotic particle by missing transverse energy.
+There are four subsystems including barrel (HB) , endcap (HE) , outer (HO) , and foward (HF) designs.
+Both the HB and HE are sample detectors. 
+The HB covers |$\eta $| $<$ 1.3, while the HE covers 1.3 $<$ |$\eta $| $<$ 3.
+They are both designed to consist of scintillators interleaved between brass (70$\% $ copper and 30$\% $ zink) absorber beacause of its high density.
+Six brass layers of 50.5 mm, eight brass layers of 56.5 mm along with front and back plate of 40 and 75 mm give totally 87cm thickness of absorders in barrel, while the thickness of abosrbers in endcap is 79mm each layer.
+The HB is not thick enough to contain all the energy of high energy particles.
+Thus, the HO is installed outside the HB to catch the rest of the later showers combined with the HB giving about 11.8 absorption lengths.
+In addition, to detector the very foward jets thus to improve the measurements of missing transverse energy, the HF is needed whose coverage extends to about |$\eta $| $=$ 5.
+As the energy deposit is not uniformly distributed in the detector, the forward region takes higher irradiation dose.
+The HF must be most radiontion-hard by means of the shielding including 40 cm steel, 40 cm concrete, and 5cm of polyethylene.  
+
+
+
+\subsection{Muon Detector} 
+Muon idenification ensure the measurement on expected background rate. 
+For example, backgrounds whose the final state including one Z boson decaying into di-muons. 
+This is essential for discovery of Higgs mechianism where backgound of ZZ is domiant.
+Besides, some physic beyond Standard Model, SuperSuymmertry for example, have muon in its final state.
+The CMS muon system is made up of three kinds of gaseous chamber detectors. 
+First, the barrel drift tube (DT) chambers contain four layers distributing between |$\eta $| $<$1.2.
+The first three layers includes 12 chambers, eight for $r-\phi$ measurements and four for |z| measurements, while the last layer only measure $r-\phi$. 
+With a width of single cell of 42 mm, Maximum drift distance is its half, which has 380 ns maximum drift time. 
+The cells filled with 85$\% $ Ar and 15$\% $ C$O_2$ set up an electrical field by 3600V anode wire at the cerntral, 1800V two electrode strips at the ceil and floor, and ttwo -1800V cathode strips on each side. 
+Second, the cathode strip chambers (CSC) have 6 layer and are grouped in 4 stations.
+Its fast response is suitable for more non-uniform magnetic field in forward region, so they are placed 0.9 $<$ |$\eta $| $<$ 2.4.
+The CSC disks are seperated into strips by either 20$\degree $ or 10$\degree $ in $\phi $. 
+Each chamber has 6 gas gaps with anode wire seperated by 7 cathode panels. 
+The cylindrical wires make the r-coordinate measurements, while the charges induced on the strips interpolate to determine $\phi $ coordinate.
+The gas mixture is 40$\% $ Ar + 50$\% $ C$O_2$ +10$\% $ C$F_2$. 
+Last, the resistive plate chambers (RPC) with fast response are added to muon system to complement the time resolution, especially with multiple-muon events.
+However, they have to work with DT and CSC, for RPC have less space resolution than the others.
+There are two layers each station for the first two stations of DT and one layer each staion for the other two staions. 
+In addition, three disks in the fisrt three CSC to improve the time resolution used in the determination of bunch crossing and muon $p_T$ reconstruction.
+A module consists of 2 gaps in which a gas plate holded by two bakelites, referred as up and down gap with a strip connecting to read out between them.
+The triggers in muon system using RPC information can perform at high rate and a rahter high $p_{T}$ threshold.
+
+\section{The trigger system}
+The interval between bunch crossing in LHC is 25 ns which corresponds to rate of events of 40 MHz.
+The trigger system is required to reduce the rate of events to be possible for recoding.
+The system is worked by Level-1 Trigger system (L1) and High-Level Trigger (HLT) togerther.
+The L1 Trigger will reduce at least to 100 kHz, and the HLT will then reduce to a maximum of 30kHz.
+The L1 Trigger is made up of several hardware progarmmable electrons which collect information from muon system and calormeter.
+On the other hand, the HLT trigger is software-like trigger which has the access to the readout of data. 
+Thus, it is able to do the complex calulation similar to those done in the analysis off-line. 
+The algorithm of HLT will be improved through the time.
+ 
