@@ -24,11 +24,25 @@ All researches need a delicate disign of a detector, including good charged part
 \item The calorimeters: The calorimeters facilitate the shower and measure the energy of post-shower particles. The information will further be clustered into the energy corespoding to their mother particles.
 \end{itemize}
 
+\subsection{Detector Kinematics} 
+To better describe the geometry of the detector, a set of axes is set. The z axis is along the beam lime, and the positive direction points to counter-clockwise direction of the beam pipe. The xy plane is perpendicular to z axis and can be described by $\phi $:
+\begin{equation} \label{eq1}
+\begin{split}
+x=cos\phi, y=sin\phi,
+\end{split}
+\end{equation}
+where $\phi$ is the azimuthal angle. The variable rapidity y is used to describe the angle $\theta$ between one vetcor and the z axis. Pseudorapidity is more convinent to use  instead of rapdity, because it is invariant under boosts along the longitudinal axis. Pseudorapidity is defined as the rapidity for a massless particle whose $E$ $\thickapprox$ $|\vec{p}|$.
+\begin{equation} \label{eq1}
+\begin{split}
+y = \frac{1}{2} ln( \frac{E+p_z}{E-p_z} ), \eta = \frac{1}{2} ln( \frac{|\vec{p}|+p_z}{|\vec{p}|-p_z} ) = -log[tan(\theta /2)]
+\end{split}
+\end{equation}
+
 \subsection{Magnet System} 
 In order to have a resolution for charged particles in the tarckers, magnetic field must maintain to bend the tracks of charged particles. 
 Providing the magnetic field of CMS, the superconducting solenoid is installed between the calorimeters and muon chambers with diameter of 6.3 m, length of 12.5 m, and mass of 200 t. 
 Designed to have 4 T magnetic field at the center of the detector, the solenoid uses four layers based on the Ampere-turn (41.7MA-turn) and made of aluminum alloy.
-The width of one layer, $\Delta R$, is far less than its counterpart of other detectors, and its lower limit is restricted by the magnetic pressure and the material properity of aluminum.
+The width of one layer is far less than its counterpart of other detectors, and its lower limit is restricted by the magnetic pressure and the material properity of aluminum.
 It also breaks the convention, for that the magnetic stress is shared between itself and the the outer mandrels. 
 The yoke is composed of five barrel wheels and 6 endcap disks. 
 Besides, to avoid the "quench back" effect, where the ebb currents induced in outer mandrels heat up the coil above superconducting critical temperature, 

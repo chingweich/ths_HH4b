@@ -1,0 +1,34 @@
+% Chapter Backgrpund
+
+\chapter{Background Estimation} \label{Background}
+In this channel whose final state are four b-flavor jets, main background contribution comes from multi-jet events.
+The background estimation in the study combines two method used in 2015 research: alphabet and bump hunt into alphabet assisted bump hunt.
+Alphabet assume the background is homogenously distributed on the two-dimension histogram.
+The histogram is sepearted into signal region where signal most disbute and sideband region. 
+
+\section{Alphabet Assisted Bump Hunt}
+The two background estimation methods, alphabet and bump hunt, use orthogonal information from data.
+While bump hunt drive in signal region, alphabet extrapolate from data in side band region. 
+Therefore, we can combine two method into alphabet assisted bump hunt.
+
+The estimation is inplemented as follow:
+\begin{itemize}
+\item Define a tagging and anti-tagging region. the double-b tagger working point is used as a discriminator here.
+\item Derive the ratio of number of events in tagging region to that of anti-tagging region, which referred below $" R_{p\/f} "$.
+\item The dependence of $R_{p/f}$ on $M_{jj}$ and that on $M_{Higgs Jet}$ are considered, while the latter is small enough to be ignored. The shape and the numbner of estimated background can be get from:
+\begin{equation} \label{eq1}
+\begin{split}
+Bkg(M_{jj})= R_{p/f}(M_{jj}) \times Anti-tag(M_{jj})
+\end{split}
+\end{equation}
+It can be further reduced to 
+\begin{equation} \label{eq1}
+\begin{split}
+R_{p/f}(M_{jj})= 1+(M_{jj} \times lin_{par})
+Bkg(M_{jj})= (1+(M_{jj} \times lin_{par})) \times Anti-tag(M_{jj})
+\end{split}
+\end{equation}
+where the parameters in Bkg($M_{jj}$) are initialized the same as Anti-tag($M_{jj}$), and $lin_{par}$ is a parameter of the linear dependence on $M_{jj}$
+\item  The function Bkg($M_{jj}$) fits on the data in signal region to finish a post-fit procedure. 
+
+\end{itemize}
