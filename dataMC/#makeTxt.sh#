@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for((k=1;k<=1;k=k+1))
+do
+    echo root://grid71.phy.ncu.edu.tw:1094//dpm/phy.ncu.edu.tw/home/cms/store/user/chchen/JetHT/crab_JetHTB/161105_105459/0001/NCUGlobalTuples_"$k".root
+done

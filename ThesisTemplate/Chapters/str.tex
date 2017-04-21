@@ -1,0 +1,151 @@
+% Chapter Analysis Strategy
+
+\chapter{Analysis Strategy} \label{Analysis Strategy}
+
+The target of the analysis is to search for the heavy resonances decaying to di-Higgs whose mass is above 800 GeV. Each Higgs boson is assumed to further decay to ${b\bar{b}}$ and is reconstructed in a lareger boosted jet including two b-flavored-like merged sub-jets by anti-kT08 algorithm. Higgs identification is done by selection on soft-drop PUPPI mass, n-subjetness, and double b-tagger. 
+
+In this Chpater, %to-do
+
+\hypersetup{colorlinks,linkcolor=black,urlcolor=black}
+\section{Data and simulated samples} \label{Data and simulated samples}
+The analysis is preformed based on the data collected in pp collision with the CMS detector at $\sqrt{s}$ = 13 TeV. The integrated luminosity is 35.9$fb^{-1}$. Runs in which the detector normally operates was chosen according to the golden JSON file: $\href{https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions16/13TeV/ReReco/Final/Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.txt}{Cert\_271036-284044\_13TeV\_23Sep2016ReReco\_Collisions16\_JSON.txt}$. The samples of data is listed in Table 1. 
+
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{l|l|l}
+    Dataset & Processing & Int. lumi. ($fb^{-1}$) \\
+    \hline
+    JetHT/Run2016B & 23Sep2016 & 5.9\\
+    JetHT/Run2016C & 23Sep2016 & 2.6\\
+    JetHT/Run2016D & 23Sep2016 & 4.4\\
+    JetHT/Run2016E & 23Sep2016 & 4.1\\
+    JetHT/Run2016F & 23Sep2016 & 3.2\\
+    JetHT/Run2016G & 23Sep2016 & 7.7\\
+    JetHT/Run2016H & PromptReco & 8.9\\
+    \hline
+    Total & & 35.9\\
+    \end{tabular}
+  \end{center}
+
+  \caption{List of datasets used in the analysis and its corresponging integrated luminosity in pp collision at $\sqrt{s}$ = 13 TeV.}
+\end{table} 
+
+\section{Monte Carlo Simulation} \label{Monte Carlo Simulation}	
+
+\section{Triggers} \label{Triggers}
+%to-do
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{l}
+    Triggers \\
+    \hline
+    HLT_PFHT800 \\
+    HLT_PFHT900 \\
+    HLT_PFHT650_WideJetMJJ900DEtaJJ1p5 \\
+    HLT_AK8PFJet360_TrimMass30 \\
+    HLT_AK8DiPFJet280_200_TrimMass30_BTagCSV_p20 \\
+    HLT_AK8PFHT650_TrimR0p1PT0p03Mass50 \\
+    \hline
+    \end{tabular}
+  \end{center}
+
+  \caption{List of Triggers applied in the analysis.}
+\end{table} 
+
+
+\section{Event reconstruction and selection} \label{Event reconstruction and selection}
+%MET Filters & AND \\
+%https://twiki.cern.ch/twiki/bin/view/CMS/MissingETOptionalFiltersRun2#How_to_run_the_Bad_Charged_Hadro 
+To reduce the impact from both cosmic particles and noise of calorimeters, missing transverse energy, MET, filters are applied. 
+They remove most events having anomaly MET based on different information given from the detectors.
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{l}
+    Triggers \\
+    \hline
+    primary vertex filter \\
+    beam halo filter \\
+    HBHE noise filter \\
+    HBHE iso noise filter \\
+    ECAL TP filter \\
+    ee badSC noise filter \\
+	Bad PF Muon Filter \\
+	Bad Charged Hadron Filter \\ 
+    \hline
+    \end{tabular}
+  \end{center}
+
+  \caption{List of MET filters applied in the analysis.}
+\end{table}
+ 
+%Number of good vertex & $>$1 \\
+At least one reconstructied pp collision vertex is required in an event, which should pass following criteria:
+\begin{itemize}[noitemsep]
+\item Number of degree of freedom $>$ 4
+\item Absolute displacement from the beamspot position along the z direction $<$ 24 cm
+\item Absolute displacement from the beamspot position along the transverse direction $<$ 2 cm
+\end{itemize}
+
+
+%Lepton veto & one tight-tagged or two opposite charged loose-tagged \\
+For the final state is all-hadronic, lepton veto is implemented. The event will be veto either there is single tight-tagged muon or electron, or there are two loose-tagged opposite charged mouns or electrons.
+
+\subsection{Higgs Jet reconstruction} 
+%http://iopscience.iop.org/article/10.1088/1126-6708/2008/04/063/pdf
+%http://cds.cern.ch/record/1194487
+Each candidate of particles is reconstructed with Particle-Flow, PF, algorithm in CMS by all the detector components which priority form high to low: muons, electrons, photons, charged hadrons, and neutral hadrons.
+
+The jets are clustered with anti-$k_{T}$ algorithm by PF candidates. Anti-$k_{T}$ algorithm is done desribed below: 
+\begin{equation} \label{eq1}
+\begin{split}
+d_{ij} = min(k^{2p}_{ti},k^{2p}_{tj})\dfrac{\delta ^2_{ij}}{R^2}\\
+\end{split}
+\end{equation}
+, where $\dalta ^{2p}_{ij}= (y_{i}-y_{j})^2+(\phi_{i}-\phi_{j})^2$ and $k_{ti}$, $y_{i}$, and $\phi _{i}$ are the transverse momentum, rapidity, and azimuthof particle i.
+Considering minimum term between one hard particle and one soft particle compared to that between the soft particle and another soft particle, the former will be smaller because transverse momentum of hard particle is larger, while its inverse square is smaller. 
+Therefore, $d_{ij}$ of the former is shorter, that is, a soft particle is more likely to cluster with hard particle around it. 
+As a consequence, if there is no other hard particle within the range 2R of the hard particle, it will cluster a conical jet with all soft particles within range R. 
+In other situation where R $<$ distance of two hard particles $<$ 2R, one can show that the particle having larger transverse momentum will have conical, while another is partly conical.
+Last, where distance of two hard particles $<$ R, two particles will merge into single jet. The jets is clustered using range parameter R set to 0.8 (refrred to AK8 jets).
+
+Pile-ups may contribute some components in jets which does not origninally belong to them. We can mitigate the effect by PUPPI algorithm.
+%https://arxiv.org/pdf/1407.6013.pdf
+ 
+ %http://xxx.lanl.gov/pdf/1402.2657v2
+ %PUPPI soft-drop mass with W boson generator level correction & 105$<$ and $<$135 \\
+ 
+ 
+%$p_{T}$ of Higgs jets & $>$300GeV \\
+%|$\eta$| of Higgs jets & $<$2.4 \\
+%Tight LepVeto jet ID & 1 \\
+%|$\Delta \eta (two Higgs jets)$| & $<$1.3 \\
+%Reduce mass & $>$750 GeV \\
+
+%$\tau$21 & $<$ 0.55 \\
+%double-b tagger & $>$0.3 or $>$0.8 \\
+
+
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{ll}
+    Selection & Requirement \\
+    \hline
+    Number of good vertex & $>$1 \\
+    MET Filters & AND of all filters\\
+	Trigger & OR of all triggers\\
+	Lepton veto & one tight-tagged or two opposite charged loose-tagged \\
+    $p_{T}$ of Higgs jets & $>$300GeV \\
+	|$\eta$| of Higgs jets & $<$2.4 \\
+	Tight LepVeto jet ID & 1 \\
+	|$\Delta \eta (two Higgs jets)$| & $<$1.3 \\
+	Reduce mass & $>$750 GeV \\
+	PUPPI soft-drop mass with W boson generator level correction & 105$<$ and $<$135 \\
+	$\tau$21 & $<$ 0.55 \\
+	double-b tagger & $>$0.3 or $>$0.8 \\
+	\hline
+    \end{tabular}
+  \end{center}
+
+  \caption{List of Triggers applied in the analysis.}
+\end{table} 
+	
