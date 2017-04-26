@@ -96,7 +96,22 @@ R_{p/f}(M_{jj})= 1+(M_{jj} \times lin_{par}) \\
 Bkg(M_{jj})= (1+(M_{jj} \times lin_{par})) \times Anti-tag(M_{jj}),
 \end{split}
 \end{equation}
-where the parameters in Bkg($M_{jj}$) are initialized the same as Anti-tag($M_{jj}$), and $lin_{par}$ is a parameter of the linear dependence on $M_{jj}$. The initialized p.d.f is referred as pre-fit.
-\item  The function Bkg($M_{jj}$) fits on the data in signal region to finish a post-fit procedure. 
+where Bkg($M_{jj}$) is not get from the p.d.f of Anti-tag, rather it get from fitting to the signal region directly.
+The parameters of in the p.d.f of Anti-tag($M_{jj}$) are initialized the same as Bkg($M_{jj}$), and $lin_{par}$ is a parameter of the linear dependence on $M_{jj}$. The initialized p.d.f is referred as pre-fit.
+\item  The parameters of the p.d.f. Bkg($M_{jj}$) are retrained by using the value of the parameters of Anti-tag($M_{jj}$) after fitting to the data in anti-tagged region to finish a post-fit procedure. 
+\subsection{Signal model}
+\subsection{Background model}
+
+\begin{figure}[t]
+  \centering
+ \begin{tabular}{cc}
+    \includegraphics[width=0.5\textwidth]{Figures/aa/anti_LL.pdf} &
+   \includegraphics[width=0.5\textwidth]{Figures/aa/data_LL.pdf} \\
+   \includegraphics[width=0.5\textwidth]{Figures/aa/anti_TT.pdf} &
+   \includegraphics[width=0.5\textwidth]{Figures/aa/data_TT.pdf}
+  \end{tabular}
+  \caption{The pre-fit and post-fit on the data in anti-tag region (left) and signal region (right) in LL category (top) and TT category (buttom).}
+  \label{fig:hvt_brs}
+\end{figure}
 
 \end{itemize}
