@@ -83,8 +83,8 @@ for(int i=0;i<tg1[0]->GetN();i++){
 
 //tg1[0]->Draw("APL");
 setTH(tg1[1]);
-tg1[1]->SetMaximum(1.5);
-tg1[1]->SetMinimum(0.5);
+tg1[1]->SetMaximum(1.4);
+tg1[1]->SetMinimum(0.6);
 tg1[1]->SetLineStyle(1);
 tg1[2]->SetLineStyle(1);
 tg1[1]->SetMarkerStyle(20);
@@ -93,6 +93,8 @@ tg1[1]->SetLineColor(1);
 tg1[2]->SetLineColor(2);
 tg1[1]->SetMarkerColor(1);
 tg1[2]->SetMarkerColor(2);
+tg1[1]->GetXaxis()->SetTitle("M_{X} [GeV]");
+tg1[1]->GetYaxis()->SetTitle("95% upper limit on #sigma: ratio _{scaled / central}");
 tg1[1]->Draw("PLA");
 tg1[2]->Draw("PLsame");
 TLegend *leg = new TLegend(0.7, 0.68, 0.88, 0.87);
@@ -142,4 +144,5 @@ void drawUncert(){
 	drawUncertBase("btag");
 	drawUncertBase("JEC");
 	drawUncertBase("JER");
+	drawUncertBase("scl");
 }
