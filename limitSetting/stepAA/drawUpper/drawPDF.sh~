@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for ((k=10; k<=10; k=k+1 ))
+do
+
+done

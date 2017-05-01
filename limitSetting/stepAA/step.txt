@@ -1,0 +1,81 @@
+python HHSRAlphabet_fit_ReReco_fast.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.3 & (!( jet1bbtag > 0.8 & jet2bbtag > 0.8))" --Cut 0.3 --name HH_LL_Data --log True
+
+python HHSRAlphabet_fit_ReReco_fast.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.8" --Cut 0.8 --name HH_TT_Data --log True --TT
+
+python HHSRAlphabet_fit_ReReco_signal.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.3 & (!( jet1bbtag > 0.8 & jet2bbtag > 0.8))" --Cut 0.3 --name HH_LL_Data --log True
+
+python HHSRAlphabet_fit_ReReco_signal.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.8" --Cut 0.8 --name HH_TT_Data --log True --TT
+
+root -l -b -q Background.c 
+
+bash runSignal_LL_Data.sh
+
+bash runSignal_TT_Data.sh
+
+bash runLimits_bump_BothCategories.sh 
+
+
+
+python HHSRAlphabet_fit_ReReco_pu.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.3 & (!( jet1bbtag > 0.8 & jet2bbtag > 0.8))" --Cut 0.3 --name HH_LL_Data --log True
+
+python HHSRAlphabet_fit_ReReco_pu.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.8" --Cut 0.8 --name HH_TT_Data --log True --TT
+
+root -l -b -q Background.c 
+
+bash runSignal_LL_Data.sh
+
+bash runSignal_TT_Data.sh
+
+bash runLimits_bump_BothCategories.sh
+ 
+ 
+python HHSRAlphabet_fit_ReReco_btag.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.3 & (!( jet1bbtag > 0.8 & jet2bbtag > 0.8))" --Cut 0.3 --name HH_LL_Data --log True
+
+python HHSRAlphabet_fit_ReReco_btag.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.8" --Cut 0.8 --name HH_TT_Data --log True --TT
+
+root -l -b -q Background.c 
+
+bash runSignal_LL_Data.sh
+
+bash runSignal_TT_Data.sh
+
+bash runLimits_bump_BothCategories.sh
+
+
+python HHSRAlphabet_fit_ReReco_JEC.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.3 & (!( jet1bbtag > 0.8 & jet2bbtag > 0.8))" --Cut 0.3 --name HH_LL_Data --log True
+
+python HHSRAlphabet_fit_ReReco_JEC.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.8" --Cut 0.8 --name HH_TT_Data --log True --TT
+
+root -l -b -q Background.c 
+
+bash runSignal_LL_Data.sh
+
+bash runSignal_TT_Data.sh
+
+bash runLimits_bump_BothCategories.sh
+
+python HHSRAlphabet_fit_ReReco_JER.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.3 & (!( jet1bbtag > 0.8 & jet2bbtag > 0.8))" --Cut 0.3 --name HH_LL_Data --log True
+
+python HHSRAlphabet_fit_ReReco_JER.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.8" --Cut 0.8 --name HH_TT_Data --log True --TT
+
+root -l -b -q Background.c 
+
+bash runSignal_LL_Data.sh
+
+bash runSignal_TT_Data.sh
+
+bash runLimits_bump_BothCategories.sh
+
+python HHSRAlphabet_fit_ReReco_pdf.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.3 & (!( jet1bbtag > 0.8 & jet2bbtag > 0.8))" --Cut 0.3 --name HH_LL_Data --log True
+
+python HHSRAlphabet_fit_ReReco_pdf.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.8" --Cut 0.8 --name HH_TT_Data --log True --TT
+
+root -l -b -q Background.c 
+
+bash runSignal_LL_Data.sh
+
+bash runSignal_TT_Data.sh
+
+bash runLimits_bump_BothCategories.sh
+
+
