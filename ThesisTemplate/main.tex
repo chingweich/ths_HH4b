@@ -42,10 +42,19 @@
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 \usepackage{palatino} % Use the Palatino font by default
-\usepackage[backend=bibtex,style=numeric-comp,sorting=none,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
-\addbibresource{main.bib} % The filename of the bibliography
+%\usepackage[backend=bibtex,style=numeric-comp,sorting=none,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+%\addbibresource{main.bib} % The filename of the bibliography
+
+\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+
+\addbibresource{example.bib} % The filename of the bibliography
+%\usepackage{biblatex}
+%\bibliographystyle{plain}
+%\bibliography{main}
+
+
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
-\usepackage{multirow}
+
 \usepackage{mathrsfs}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -54,18 +63,22 @@
 \usepackage{pdflscape}
 \usepackage{rotating}
 \usepackage{lineno}
+\usepackage{subfigure}
+\usepackage{multirow}
 \usepackage{enumitem}
 \usepackage{courier}
 \usepackage{booktabs}
 \usepackage{afterpage}
 \usepackage[final]{pdfpages}
 \usepackage{hyperref}
-\usepackage{subfigure}
 \usepackage{changepage}
+\usepackage[toc,page]{appendix}
 %\usepackage{gensymb}
 
+
+
 \renewcommand{\arraystretch}{1.2}
-\DeclareMathOperator{\erf}{erf}
+%\DeclareMathOperator{\erf}{erf}
 
 \newcommand\blankpage{
   \null
@@ -114,6 +127,7 @@
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 \pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
 
+\iffalse
 \includepdf{cover.pdf}
 \afterpage{\blankpage} % Add a new blank page without page number
 
@@ -182,7 +196,7 @@
 \end{abstract}
 
 \includepdf{abstract.pdf}
-
+\fi
 %----------------------------------------------------------------------------------------
 %	LIST OF CONTENTS/FIGURES/TABLES PAGES
 %----------------------------------------------------------------------------------------
@@ -206,17 +220,27 @@
   %\include{Chapters/Chapter1}
   %\include{Chapters/Chapter2} 
   %\include{Chapters/Chapter3}
-    \include{Chapters/th}
+  \include{Chapters/th}
   \include{Chapters/det}
-	\include{Chapters/AnaStr2}
-		\include{Chapters/bkg}
+  \include{Chapters/AnaStr2}
+  \include{Chapters/bkg}
+  \include{Chapters/sys}
+  \appendix
+  %\begin{appendices}
+  \include{Chapters/ap1}
+		%\chapter{Some Appendix}
+		%The contents...
+		%\end{appendices}
 \end{linenumbers}
+
+
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
 {\setstretch{1.15} \sloppy \printbibliography[heading=bibintoc]}
+%\printbibliography
 
 %----------------------------------------------------------------------------------------
 
