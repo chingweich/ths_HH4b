@@ -29,7 +29,7 @@ The analysis is preformed based on the data collected in pp collision with the C
 \end{table} 
 
 \section{Monte Carlo Simulation} \label{Monte Carlo Simulation}	
-The Monte Carlo, MC, simulations in the analysis are bulk graviton, radion, and multijet events. Bulk graviton, radion are used for setting the upper limit of cross section, while multijets events are used for testing the background estimation method and not used for final results. The names and the number of events of samples are listed in the table 3.2-3.4. The cross section of signal used in the final results are listed in the table 3.5. Since the distributions of pile-ups of data and of MC are different, a pile-up re-weighting is applied to MC samples. Here the distribution of pile-ups of data is derived by using minibias cross section of pp collision of 69.2 mb.%to-do 
+The Monte Carlo, MC, simulations in the analysis are bulk graviton, radion, and multijet events. MadGraph is used to produce the simulated particles and their decay\citep{Alwall2011}. Bulk graviton, radion are used for setting the upper limit of cross section, while multijets events are used for testing the background estimation method and not used for final results. The names and the number of events of samples are listed in the table 3.2-3.4. The cross section of signal used in the final results are listed in the table 3.5\citep{WED_BG_13TeV,WED_radion_13TeV,WED_BGHHDecay_13TeV,WED_radionHHDecay_13TeV}. Since the distributions of pile-ups of data and of MC are different, a pile-up re-weighting is applied to MC samples. Here the distribution of pile-ups of data is derived by using minibias cross section of pp collision of 69.2 mb\citep{Aaboud:2016mmw}.%to-do 
 %https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.117.182002
 %https://link.springer.com/article/10.1007%2FJHEP06%282011%29128
 \begin{table}[h!]
@@ -126,7 +126,7 @@ The Monte Carlo, MC, simulations in the analysis are bulk graviton, radion, and 
 %https://twiki.cern.ch/twiki/bin/view/CMS/MissingETOptionalFiltersRun2#How_to_run_the_Bad_Charged_Hadro 
 To reduce the impact from both cosmic particles and noise of calorimeters, missing transverse energy, MET, filters are applied.
 If all particles are detected and well-reconstructed in the detector, the sum of transverse momentum will be zero. However, if there are noise, ill-reconstructed particles or jets, the sum of transverse momentum will not equal to zero, and the negative of its value is defined as MET.  
-The filters remove most events having anomaly MET based on different information given from the detectors. All filters used are listed in table 3.6. %table 
+The filters remove most events having anomaly MET based on different information given from the detectors. We require the event to pass all filters listed in table 3.6\citep{MissingETOptionalFiltersRun2}.  %table 
 \begin{table}[h!]
   \begin{center}
     \begin{tabular}{l}
@@ -163,9 +163,9 @@ For the final state is all-hadronic, lepton veto is implemented. The event will 
 %http://iopscience.iop.org/article/10.1088/1126-6708/2008/04/063/pdf
 %http://cds.cern.ch/record/1194487
 %http://cds.cern.ch/record/1247373
-Each candidate of particles is reconstructed with Particle-Flow, PF, algorithm in CMS by all the detector components. In the algorithm, priority of reconstruction form high to low are: muons, electrons, photons, charged hadrons, and neutral hadrons.
+Each candidate of particles is reconstructed with Particle-Flow, PF, algorithm in CMS by all the detector components\citep{CMS-PAS-PFT-10-001,PFPAS2009}. In the algorithm, priority of reconstruction form high to low are: muons, electrons, photons, charged hadrons, and neutral hadrons.
 
-The jets are clustered with anti-$k_{T}$ algorithm by PF candidates. Anti-$k_{T}$ algorithm is done described below: 
+The jets are clustered with anti-$k_{T}$ algorithm by PF candidates\citep{antiKtAlgorithm}. Anti-$k_{T}$ algorithm is done described below: 
 \begin{equation} \label{eq1}
 \begin{split}
 d_{ij} = min(k^{2p}_{ti},k^{2p}_{tj})\dfrac{\Delta ^2_{ij}}{R^2}\\
@@ -180,7 +180,7 @@ In other situation where the distance of two hard particles is between R and 2R,
 Last, where distance of two hard particles $<$ R, two particles will merge into single jet. In the analysis, the jets is clustered using anti-$k_{T}$ with range parameter R set to 0.8 (refrred as AK8 jets).
 
 %https://arxiv.org/pdf/1407.6013.pdf
-In one bunch crossing, the vetex having highest energy called primary vertex, and the others are called pile-ups, PUs. PUs may contribute some components in jet clustering which do not origninally belong to them. We can mitigate the effect by PUPPI algorithm, which is described below:
+In one bunch crossing, the vetex having highest energy called primary vertex, and the others are called pile-ups, PUs. PUs may contribute some components in jet clustering which do not origninally belong to them. We can mitigate the effect by PUPPI algorithm\citep{puppi}, which is described below:
 First, a shape $\alpha _{i}$ of a particle i is defined: 
 \begin{equation} \label{eq2}
 \begin{split}
@@ -200,7 +200,7 @@ where $F_{\chi ^2}$ is the cumulative distribution function of the $\chi ^2$ dis
 %$p_{T}$ of Higgs jets & $>$300GeV \\
 %|$\eta$| of Higgs jets & $<$2.4 \\
 %Tight LepVeto jet ID & 1 \\
-Basic selection is applied on AK8 jet. We only consider the jets having the largest and the second largest transverse momentum in an event. The $p_{T}$ of the jets must greater than 300 GeV and pseudorapidity |$\eta$| must less than 2.4. Also, the tight PF jet identification provided by JETMET group is required, which is summarized in the table 3.7, where fraction are referring to energy fraction, and constituents and multiplcity are referring to the number of particles.
+Basic selection is applied on AK8 jet. We only consider the jets having the largest and the second largest transverse momentum in an event. The $p_{T}$ of the jets must greater than 300 GeV and pseudorapidity |$\eta$| must less than 2.4. Also, the tight PF jet identification provided by JETMET group is required\citep{JetID13TeVTWiki}, which is summarized in the table 3.7, where fraction are referring to energy fraction, and constituents and multiplcity are referring to the number of particles.
 %to-do table number 
 %https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetID#Recommendations_for_13_TeV_2016
 
@@ -251,7 +251,7 @@ where $M_{j1}$ or $M_{j2}$ is the mass of Higgs jets, and $M_{H}$ is the mass of
 %http://xxx.lanl.gov/pdf/1402.2657v2
 %CMS Collaboration, “Search for heavy resonances in the W/Z-tagged dijet mass spectrum at 13 TeV”, CMS Analysis Note CMS-AN-16-235, CERN, 2016.
 %PUPPI soft-drop mass with W boson generator level correction & 105$<$ and $<$135 \\
-The soft-drop procedure is inplemented to re-cluster the jet by removing soft contribution as follow:
+The soft-drop procedure is inplemented to re-cluster the jet by removing soft contribution as follow\citep{Larkoski:2014wba}
 \begin{itemize}
 \item Deculster a targeted jet into two sub-jets.
 \item Continue to decompose the sub-jets until the condition is achieved
@@ -266,7 +266,7 @@ where $R_0$ is the cone size of the original cluster algorithm, $p_T$ are the tr
 If $\beta  >$ 0, the soft contribution is removed while remain a fraction of soft-collinear radiation. 
 If $\beta  <$ 0, soft drop removes both soft and collinear radiation.
 In CMS, the $Z_{cut}$ and $\beta $ are set 0.1 and zero respectively.
-The difference between the peak of the distribution of mass of PUPPI soft-drop jets and the mass of physical Higgs boson is found.
+The difference between the peak of the distribution of mass of PUPPI soft-drop jets and the mass of physical Higgs boson is found\citep{CMS-AN-16-235}.
 A Correction is applied to move the peak to the true phyiscal value. 
 The ratio is derived by peak of the mass distribution of reconstructed jets in WW dijet Monte Carlo simulations to mass of true physical value.
 The corrected PUPPI soft-drop mass of the first two leading jets are required between 105 and 135 GeV, which has been optimized.
@@ -276,7 +276,7 @@ The corrected PUPPI soft-drop mass of the first two leading jets are required be
 %https://arxiv.org/abs/1004.2489
 %https://twiki.cern.ch/twiki/bin/view/CMS/JetWtagging#Working_points_and_scale_factors
 %$\tau$21 & $<$ 0.55 \\
-The ratio $\tau _N $ to $\tau _{N-1}$ is used as a discriminant to seperate the boosted events decaying into N particles from multi-jet events. $\tau _N $ is so-called "N-subjettiness" algorithm:
+The ratio $\tau _N $ to $\tau _{N-1}$ is used as a discriminant to seperate the boosted events decaying into N particles from multi-jet events. $\tau _N $ is so-called "N-subjettiness" algorithm\citep{Thaler:2010tr,Thaler:2011gf,Stewart:2010tn}
 \begin{equation} \label{eq6}
 \begin{split}
 \tau _N = \frac{1}{d_0} \sum\limits_{k}  p_{T,k} min \{ \Delta R_{1,k},\Delta R_{2,k},\cdots,\Delta R_{N,k} \} \\
@@ -285,9 +285,9 @@ d_0 = \sum\limits_{k}  p_{T,k} R_0,
 \end{equation}
 where k runs over the constituent particles in a given jet, $\Delta R_{jk}$ is the distance between particle j and k in $\eta \phi$ space, $R_0$ is the cone size of the original cluster algorithm. In the analysis, the boosted jets are decaying into two sub-jets, so $\tau _2 $ to $\tau _1$ ratio is used, and it is referred as $\tau _{21}$ in the following chapters.
 The $\tau _{21}$ is required to be less than 0.55.  
-The working point and simualtion-to-data scale factor is derived by JME POG.
+The working point and simualtion-to-data scale factor is derived by JME POG\citep{WTagTWikiWPs}.
 
-The double-b tagger is a multiple variable analysis discriminant used to identify b-flavor jets. Jets in multi-jet evetns and Higgs jets decaying into $b\bar{b}$ are used for training. Here lists out the input information:
+The double-b tagger is a multiple variable analysis discriminant used to identify b-flavor jets\citep{CMS-PAS-BTV-15-002}. Jets in multi-jet evetns and Higgs jets decaying into $b\bar{b}$ are used for training. Here lists out the input information:
 \begin{itemize}
 \item The first four impact paramters to its uncertainty values ordered from the largest to the smallest.
 \item The  N-subjettiness axes referred as $\tau $-axes use the information of N-subjettiness
@@ -311,7 +311,7 @@ where $SV_0$ and $SV_1$ are the secondary verteces with the smallest 3D flight d
 \end{itemize} 
 %https://cds.cern.ch/record/2195743
 %https://twiki.cern.ch/twiki/bin/viewauth/CMS/BtagRecommendation80XReReco
-The double-b working points and simualtion-to-data scale factor is derived by BTV POG.
+The double-b working points and simualtion-to-data scale factor is derived by BTV POG\citep{BtagRecommendation80XReReco}.
 The analysis is seperated into two catgory with two Higgs jets in the events either both passing loose working point ($>$ 0.3) or both passing tight working point ($>$ 0.8), which are referred as LL and TT categories respectively. The events sit in TT region will be excluded from LL region to make two categories orthogonal.
 %double-b tagger & $>$0.3 or $>$0.8 \\
 
