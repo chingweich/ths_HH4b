@@ -1,12 +1,12 @@
 % Chapter Analysis Strategy
 
-\chapter{Systematic Uncertainty} \label{Sysyematic Uncertainty}
+\chapter{Systematic Uncertainty} \label{chap:5}
 
 \section{Systematic Uncertainty on Signal Selection} \label{Event reconstruction and selection}
 
 \begin{itemize}
 %CMS-PAS-LUM-17-001
-  \item Luminosity: Intergrated luminosity is estimated with 2.5$\% $ uncertainty. 
+  \item Luminosity: Intergrated luminosity is estimated with 2.5$\% $ uncertainty\citep{CMS-PAS-LUM-17-001}. 
   \item Pile-ups: Pile-up efficiecny scale factor is applied to simulation weight the pile-up distribution as that of data. The pile-up distribution of data is measured by assuming minibias cross section equals to 69.2 mb, which has 4.6$\% $ uncertainty. 
 \begin{figure}[t]
   \centering
@@ -18,7 +18,7 @@
   \label{fig:hvt_brs}
 \end{figure}  
    
-  \item Double-b tagger scale factor:
+  \item Double-b tagger scale factor: The double-b tagger scale factor and its uncertainty is provided by BTV POG\citep{BtagRecommendation80XReReco}.
   
 \begin{figure}[t]
   \centering
@@ -31,10 +31,14 @@
 \end{figure}    
   
 %https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetWtagging
-  \item $\tau _{21}$ scale factor: The uncertainty of $\tau _{21}$ scale factor is measured by JME POG on the samples of semi-leptonic $t\bar{t}$ which is a generous source of W boson. The uncertainty of scale factor in the region $\tau _{21} <$ 0.55 is 14$\% $ per jet.
+  \item $\tau _{21}$ scale factor: The uncertainty of $\tau _{21}$ scale factor is measured by JME POG on the samples of semi-leptonic $t\bar{t}$ which is a generous source of W boson. The uncertainty of scale factor in the region $\tau _{21} <$ 0.55 is 14$\% $ per jet\citep{WTagTWikiWPs}.
  
 %https://twiki.cern.ch/twiki/bin/view/CMS/JetResolution#Smearing_procedures 
-  \item Jet energy resoultion: The procedure is to smear the energy resolution of AK8 jets of simulation as same as those of data.  
+  \item Jet energy resoultion: The procedure is to smear the energy resolution of AK8 jets of simulation as same as those of data\citep{JER}. 
+  
+  \item Parton distribution function, PDF: The parton distribution function is a prababilty density function of the energy of partons in a proton. The PDF is obtained only by experimental results. There are many sets of PDF trying to well describe them. In CMS, the NNPDF3.0 is used as default PDF set\citep{Ball:2014uwa}. The uncertainty is derived from the ratio of RMS of the distribution of 100 efficiency by change the weight of different PDFs to the efficiency of the central PDF set. 
+	
+	\item Factorization scale: the factorization is the energy determining seperate the regimes of perturbative and non-perturbative of QCD. The uncertainty is measured the changes of the efficiencyby scaling the energy by two or by 0.5.
   
   \begin{figure}[t]
   \centering
@@ -45,7 +49,7 @@
   \caption{The jet energy resoultion uncertainty. The scale-up and scale-down to central ratio based on the change of the upper limit are shown in TT (left) and LL (right) category.}
   \label{fig:hvt_brs}
 \end{figure}  
-  \item Jet energy scale:
+  \item Jet energy scale: The procedure is to weight the four momenta of AK8 jets of simulation as same as those of data\citep{Chatrchyan:2011ds}. The scale is to calibrate the energy response in ECAL of the jets using $\\gamaa$/Z + jets control samples because the energy of photon, of Z $\rightarrow e^+e^-$ and of Z $\rightarrow \mu^+\mu^-$is measured accurately in ECAL.
   
   \begin{figure}[t]
   \centering
@@ -77,15 +81,20 @@
   \label{fig:hvt_brs}
 \end{figure}  
 
-	\item Trigger efficiency scale factor: the trigger efficiency scale factor is measured by the ratio of the efficiency of simulation to that of data. Since we veto the leptonic events, we use JetHt dataset instead of Single-muon dataset to measure the efficiency of data. The pre-selection is listed:
+	\item Trigger efficiency scale factor: the trigger efficiency scale factor is measured by the ratio of the efficiency of simulation to that of data. Since we veto the leptonic events, we use JetHt dataset instead of SingleMuon dataset to measure the efficiency of data. The uncertainty comes from prapogating the statistic uncertainty added by $\frac{1-efficiency_{PFJET260,QCD}}{efficiency_{pre-selection}}$.The pre-selection is listed:
    \begin{itemize}
 	\item Two leading AK8 jets have $p_{T} >$ 300 GeV and |$\eta$| $<$2.4.
 	\item 105 $<$ corrected PUPPI soft-drop maas $<$ 135.
 	\item $\Delta \eta$(two leading AK8 jets) $<$ 1.3.
 	\end{itemize}
+	The trigger efficiecny scale factor effects less in the analysis because the $M_{jj}$ of the signal is  in the turn-on region where the scale factor is one.
+	
 \end{itemize}
 
+
 \clearpage
+\section{Summary table}
+The summary of all systematic uncertainties is in table 5.1. It also concludes the variation form the uncertainted is considered.
 \begin{table}[h!]
   \begin{center}
     \begin{tabular}{l|l|l|l}
@@ -94,12 +103,12 @@
     Luminosity & log normal & 2.5$\% $ & 2.5$\% $\\
     Pile-up & shape & 1$\% $ & 1$\% $\\
     Jet Energy Resoultion & shape & 1$\% $ & 0.5$\% $\\
-    Jet Energy Scale & shape & \\
-    Double-b taggger & shape & \\
+    Jet Energy Scale & shape & 2$\% $ & 2$\% $\\
+    Double-b taggger & shape & 20$\% $ & 15$\% $ \\
     trigger & shape & less than 0.1$\% $ & less than 0.1$\% $\\
     $\tau _{21}$ scale factor & log normal & 14$\% $ per jet & 14$\% $ per jet\\
-    PDF & log normal & \\
-    scale & log normal & \\
+    PDF & log normal & 2.5$\% $ & 2.5$\% $\\
+    scale & log normal & 0.2$\% $ & 0.2$\% $\\
     \hline
     \end{tabular}
   \end{center}

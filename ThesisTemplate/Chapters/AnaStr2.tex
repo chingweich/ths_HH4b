@@ -1,6 +1,6 @@
 % Chapter Analysis Strategy
 
-\chapter{Analysis Strategy} \label{Analysis Strategy}
+\chapter{Analysis Strategy} \label{chap:3}
 
 The target of the analysis is to search for the heavy resonances decaying to di-Higgs where mass of heavy resonances is above 800 GeV. Each Higgs boson is assumed to further decay to ${b\bar{b}}$ and is reconstructed in a boosted jet including two b-flavored-like sub-jets by anti-kT08 algorithm. Higgs identification is done by selection on PUPPI soft-drop mass, N-subjetness, and double b-tagger. 
 
@@ -351,7 +351,7 @@ Since the final state includes di-Higgs jets, the triggers are selected consider
 	Tight LepVeto jet ID & pass \\
 	|$\Delta \eta $ (two AK8 jets) | & $<$ 1.3 \\
 	Reduce mass & $>$ 750 GeV \\
-	corrected PUPPI soft-drop mass & 105 $<$ and $<$ 135 \\
+	corrected PUPPI soft-drop mass & 105GeV $<$ and $<$ 135GeV \\
 	$\tau _{21}$ & $<$ 0.55 \\
 	double-b tagger & $>$ 0.3 (LL) or $>$ 0.8 (TT)\\
 	\hline
@@ -411,7 +411,16 @@ Since the final state includes di-Higgs jets, the triggers are selected consider
   \caption{The cut flow of all $M_X$ (GeV) of spin-2 bulk graviton.}
 \end{table} 
 
-
+\begin{figure}[t]
+  \centering
+  \begin{tabular}{cc}
+    \includegraphics[width=0.5\textwidth]{Figures/fig_eff_rd.pdf} &
+    \includegraphics[width=0.5\textwidth]{Figures/fig_eff_bg.pdf} \\
+    
+  \end{tabular}
+  \caption{The cut flow of all $M_X$ (GeV) of spin-0 radion (left) and of spin-2 bulk graviton (right).}
+  \label{fig:hvt_brs}
+\end{figure}
 
 \section{Simulation Distribution} 
 In the section, distribution of Monte Carlo simulations of signal and background will be shown to demonstrate the discrimination of each variables of the seletion. For each distribution, all selection described in previous section is required except the variable itself and double-b tagger discriminant. The cross section of every signal is set to 20 pb. The numbers of events of signal and of background are normalized to same luminosity of data of 35.9fb$^{-1}$. Multi-jet events are added up by samples of different $H_T$ section listed in table 3.4, and seperated into four categories summarized in the table 3.10.  Besides, the cross sections at leading order of multi-jet events are multiplied by a factor about 0.7 to modify them closer to the value of next leading order.
