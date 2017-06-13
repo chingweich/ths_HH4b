@@ -8,6 +8,9 @@
 %CMS-PAS-LUM-17-001
   \item Luminosity: Intergrated luminosity is estimated with 2.5$\% $ uncertainty\citep{CMS-PAS-LUM-17-001}. 
   \item Pile-ups: Pile-up efficiecny scale factor is applied to simulation weight the pile-up distribution as that of data. The pile-up distribution of data is measured by assuming minibias cross section equals to 69.2 mb, which has 4.6$\% $ uncertainty. 
+  \item Higgs tagging: Since there is no pure Higgs events in data, we cannot obtain the scale factor of Higgs-get tagging using the data. Instead, the Higgs-tagged uncertainty is measured by Higgs-jets and W-jets from simulation. The difference in mass scale and their jet flavor composition lead to different hadron shower response. Two shower and hadronization models is used to see how the hadronization effects the jet tagging. The bulkgraviton $\rightarrow$ WW and bulkgraviton $\rightarrow$ HH are used for the W-jets and Higgs-jets respectively. First, we calcuate the efficiency of both jets in two models: PYTHIA and  HERWIG. Then, for each model, we divide the $\varepsilon_{HH}$ by $\varepsilon_{WW}$ to get the efficiency ratio, referred as R. Finally, the systematic uncertainty is derived from the uncertainty of double ratio R$_{HERWIG}$/R$_{PYTHIA}$. There is $p_{T}$ dependent uncertainty by fitting to the uncertainties of different mass point, which gives overall 13 to 19 $\% $ uncertainty\citep{AN-16-300}.
+  
+  
 \begin{figure}[t]
   \centering
  \begin{tabular}{cc}
@@ -98,17 +101,18 @@ The summary of all systematic uncertainties is in table 5.1. It also concludes t
 \begin{table}[h!]
   \begin{center}
     \begin{tabular}{l|l|l|l}
-    Uncertainty & Variation & value(TT) & value(LL) \\
+    Uncertainty & value(TT) & value(LL) \\
     \hline
-    Luminosity & log normal & 2.5$\% $ & 2.5$\% $\\
-    Pile-up & shape & 1$\% $ & 1$\% $\\
-    Jet Energy Resoultion & shape & 1$\% $ & 0.5$\% $\\
-    Jet Energy Scale & shape & 2$\% $ & 2$\% $\\
-    Double-b taggger & shape & 20$\% $ & 15$\% $ \\
-    trigger & shape & less than 0.1$\% $ & less than 0.1$\% $\\
-    $\tau _{21}$ scale factor & log normal & 14$\% $ per jet & 14$\% $ per jet\\
-    PDF & log normal & 2.5$\% $ & 2.5$\% $\\
-    scale & log normal & 0.2$\% $ & 0.2$\% $\\
+    Luminosity &  2.5$\% $ & 2.5$\% $\\
+    Pile-up & 1$\% $ & 1$\% $\\
+    Jet Energy Resoultion &  1$\% $ & 0.5$\% $\\
+    Jet Energy Scale &  2$\% $ & 2$\% $\\
+    Double-b taggger &  20$\% $ at most & 15$\% $ at most\\
+    Higgs tagging & 13-19$\% $ &13-19$\% $ \\
+    trigger &  less than 0.1$\% $ & less than 0.1$\% $\\
+    $\tau _{21}$ scale factor &  14$\% $ per jet & 14$\% $ per jet\\
+    PDF &  2.5$\% $ & 2.5$\% $\\
+    scale &  0.2$\% $ & 0.2$\% $\\
     \hline
     \end{tabular}
   \end{center}
