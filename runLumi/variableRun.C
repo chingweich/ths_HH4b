@@ -55,7 +55,7 @@ void massPlotBase(string input){
 			Float_t  etadiff = data.GetFloat("etadiff");
 			if(etadiff>1.3)continue;
 			Float_t  dijetmass_softdrop_corr = data.GetFloat("dijetmass_softdrop_corr");
-			if(dijetmass_softdrop_corr<750)continue;
+			if(dijetmass_softdrop_corr<1100)continue;
 			Float_t  jet1_puppi_tau21 = data.GetFloat("jet1_puppi_tau21");
 			Float_t  jet2_puppi_tau21 = data.GetFloat("jet2_puppi_tau21");
 			if(jet1_puppi_tau21>0.55||jet2_puppi_tau21>0.55)continue;
@@ -108,7 +108,7 @@ void massPlotBaseTT(string input){
 			Float_t  etadiff = data.GetFloat("etadiff");
 			if(etadiff>1.3)continue;
 			Float_t  dijetmass_softdrop_corr = data.GetFloat("dijetmass_softdrop_corr");
-			if(dijetmass_softdrop_corr<750)continue;
+			if(dijetmass_softdrop_corr<1100)continue;
 			Float_t  jet1_puppi_tau21 = data.GetFloat("jet1_puppi_tau21");
 			Float_t  jet2_puppi_tau21 = data.GetFloat("jet2_puppi_tau21");
 			if(jet1_puppi_tau21>0.55||jet2_puppi_tau21>0.55)continue;
