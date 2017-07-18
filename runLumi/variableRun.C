@@ -74,7 +74,7 @@ void massPlotBase(string input){
 			
 			Int_t run=data.GetInt("run");
 			Int_t lumi=data.GetInt("lumi");
-			Int_t event=data.GetInt("event");
+			Long64_t event=data.GetLong64("event");
 			myfile<<run<<":"<<lumi<<":"<<event<<endl;
 			
 	}
@@ -127,7 +127,7 @@ void massPlotBaseTT(string input){
 			
 			Int_t run=data.GetInt("run");
 			Int_t lumi=data.GetInt("lumi");
-			Int_t event=data.GetInt("event");
+			Long64_t event=data.GetLong64("event");
 			myfile<<run<<":"<<lumi<<":"<<event<<endl;
 			
 	}
