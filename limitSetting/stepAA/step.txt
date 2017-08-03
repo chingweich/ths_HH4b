@@ -1,4 +1,6 @@
 
+AN300- uncertainties JER,JEC: https://github.com/chingweich/HHbbbbAnalyzer/tree/master/8022_v1/miniTree/JER
+
 Ntuple: https://github.com/chingweich/ths_HH4b/blob/master/limitSetting/stepAA/storedNtuple
 
 minitree maker:
