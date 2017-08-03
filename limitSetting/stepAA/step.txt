@@ -4,6 +4,12 @@ Ntuple: /storedNtuple
 minitree maker:
 signal: https://github.com/chingweich/HHbbbbAnalyzer/blob/master/8022_v1/miniTree/skimTreeJER.C
 data:   /minitreeMaker
+*signal doulbe-b SF code : "/afs/cern.ch/work/c/chchen/public/dbtSFTriggerBits/"
+*signal PDF code: https://github.com/chingweich/ths_HH4b/blob/master/uncert_pdf/pdfSkimTree.C
+
+minitrees:
+signal: "/afs/cern.ch/work/c/chchen/public/dbtSFTriggerBits/"
+data: /afs/cern.ch/work/c/chchen/public/reMin.root
 
 make data histograms:
 python HHSRAlphabet_fit_ReReco_fast.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.3 & (!( jet1bbtag > 0.8 & jet2bbtag > 0.8))" --Cut 0.3 --name HH_LL_Data --log True
@@ -19,6 +25,11 @@ bash runSignal_LL_Data.sh
 bash runSignal_TT_Data.sh
 combine data cards and set limit:
 bash runLimits_bump_BothCategories.sh 
+
+draw limit:
+https://github.com/chingweich/ths_HH4b/blob/master/limitSetting/stepAA/drawUpper/plot_Asymptotic_HHbbbb.C
+bulk graviton (20,1)
+radion (10,1)
 
 
 python HHSRAlphabet_fit_ReReco_signal_CW.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.3 & (!( jet1bbtag > 0.8 & jet2bbtag > 0.8))" --Cut 0.3 --name HH_LL_Data --log True
