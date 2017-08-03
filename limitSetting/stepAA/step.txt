@@ -1,4 +1,7 @@
 
+paper figure2: fill https://github.com/chingweich/ths_HH4b/blob/master/N1/skimTree.C
+make canvus: https://github.com/chingweich/ths_HH4b/blob/master/N1/MCplots_v2.C
+canvus: https://github.com/chingweich/ths_HH4b/blob/master/N1/MCcompare.root
 AN300- uncertainties JER,JEC: https://github.com/chingweich/HHbbbbAnalyzer/tree/master/8022_v1/miniTree/JER
 
 Ntuple: https://github.com/chingweich/ths_HH4b/blob/master/limitSetting/stepAA/storedNtuple
