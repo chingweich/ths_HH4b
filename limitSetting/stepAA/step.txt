@@ -7,7 +7,7 @@ AN300- uncertainties JER,JEC: https://github.com/chingweich/HHbbbbAnalyzer/tree/
 Ntuple: https://github.com/chingweich/ths_HH4b/blob/master/limitSetting/stepAA/storedNtuple
 
 minitree maker:
-signal: https://github.com/chingweich/HHbbbbAnalyzer/blob/master/8022_v1/miniTree/skimTreeJER.C
+signal: https://github.com/chingweich/ths_HH4b/blob/master/limitSetting/stepAA/minitreeMaker/skimTreeJER.C
 data:   https://github.com/chingweich/ths_HH4b/blob/master/limitSetting/stepAA/minitreeMaker
 *signal doulbe-b SF code : "/afs/cern.ch/work/c/chchen/public/dbtSFTriggerBits/"
 *signal PDF code: https://github.com/chingweich/ths_HH4b/blob/master/uncert_pdf/pdfSkimTree.C
