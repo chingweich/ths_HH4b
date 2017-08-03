@@ -31,7 +31,7 @@ int iPeriod = 4;    // 1=7TeV, 2=8TeV, 3=7+8TeV, 7=7+8+13TeV
 int iPos =11;
 bool bias= false;
 bool blind = false;
-//bool LLregion = false;
+bool LLregion = false;
 bool isQCD = false;
 
 double rebin = 1;
@@ -133,7 +133,7 @@ TCanvas* comparePlots2(RooPlot *plot_bC, RooPlot *plot_bS, TH1F *data, TH1F *qcd
     return c;
 }
 
-void Background_fast_Base(bool LLregion = false,int rebin_factor=rebin,int model_number = 0,int imass=750, bool plotBands = false)
+void Background_fast(int rebin_factor=rebin,int model_number = 0,int imass=750, bool plotBands = false)
 {
 /*    if(LLregion){
       SR_hi = 2843.;
@@ -1037,9 +1037,5 @@ void Background_fast_Base(bool LLregion = false,int rebin_factor=rebin,int model
     
 }
 
-void Background_fast(){
-	Background_fast_Base(1);
-	Background_fast_Base(0);
-}
 
 

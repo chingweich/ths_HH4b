@@ -19,8 +19,8 @@ from Distribution_Header import *
 import Alphabet
 from Alphabet import *
 
-lowBin=1100
-highBin=3000
+lowBin=1000
+highBin=3600
 
 def GetNom(file_string):
 	tempFile = TFile(file_string)
@@ -110,7 +110,7 @@ variable2 = "dijetmass_softdrop_corr"
 #variable = "dijetmass_corr"
 
 
-sigpath = "/afs/cern.ch/work/c/chchen/public/dbtSFTriggerBits/"
+sigpath = "/afs/cern.ch/work/c/chchen/public/dbtSFTriggerBits_Rd/"
 
 
 if Options.workspace == "alphabet":
@@ -141,8 +141,8 @@ if Options.workspace == "alphabet":
 		Signal_mX_MJEC_Up = TH1F("Signal_mX_%s_"%(m)+Options.name+"_CMS_eff_massJECUp", "", len(binBoundaries)-1, array('d',binBoundaries))
 		Signal_mX_MJEC_Down = TH1F("Signal_mX_%s_"%(m)+Options.name+"_CMS_eff_massJECDown", "", len(binBoundaries)-1, array('d',binBoundaries))
 		
-                quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX, variable2, TightT,"puWeightsDown*dbtSF/1.")
-                quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX_antitag, variable2, TightAT,"puWeightsDown*dbtSF/1.")
+                quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX, variable2, TightT,"puWeights*dbtSF/1.")
+                quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX_antitag, variable2, TightAT,"puWeights*dbtSF/1.")
                 quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX_btag_up, variable2, TightT,"puWeights*dbtSFup/1.")
                 quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX_btag_down, variable2, TightT,"puWeights*dbtSFdown/1.")
                 quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX_trig_up, variable2, TightT,"trigWeightUp_Update*puWeights*dbtSF/1.")
@@ -260,7 +260,7 @@ if Options.workspace == "alphabet":
 
 		text_file.write("-------------------------------------------------------------------------------\n")
 		text_file.write("bin                                            HH4b\n")
-		text_file.write("observation                                    %f\n"%(data_integral))
+		text_file.write("observation                                    -1\n")
 		text_file.write("-------------------------------------------------------------------------------\n")
 		text_file.write("bin                                             HH4b            HH4b\n")
 		text_file.write("process                                          0      1\n")
@@ -271,15 +271,28 @@ if Options.workspace == "alphabet":
 	
 		text_file.write("CMS_eff_tau21_sf lnN                    1.30/0.74        -\n") #(0.028/0.979)
 		text_file.write("CMS_eff_Htag lnN                    %f       -\n"%(HTaggingUnc))
-		text_file.write("CMS_JEC lnN 		     %f        -\n"%(FJEClnN)) 	
-		text_file.write("CMS_massJEC lnN                 %f        -\n"%(MJEClnN))
-		text_file.write("CMS_eff_bbtag_sf lnN                    %f/%f       -\n"%(btaglnNup,btaglnNdown))
-		text_file.write("CMS_JER lnN                    %f        -\n"%(FJERlnN))
-		text_file.write("CMS_PU lnN                    %f        -\n"%(PUlnN))
+		text_file.write("CMS_JEC lnN 		     1.02       -\n") 	
+		#text_file.write("CMS_massJEC lnN                 %f        -\n"%(MJEClnN))
+		if Options.LL_DoubleB_Region:
+			if m < 2000:
+				text_file.write("CMS_eff_bbtag_sf lnN                    1.04/0.9       -\n")
+			else:
+				text_file.write("CMS_eff_bbtag_sf lnN                    1.06/0.84       -\n")
+		else:
+			if m < 2000:
+				text_file.write("CMS_eff_bbtag_sf lnN                    1.1/0.875       -\n")
+			else:
+				text_file.write("CMS_eff_bbtag_sf lnN                    1.15/0.8       -\n")
+		if Options.LL_DoubleB_Region:
+			text_file.write("CMS_JER lnN                    1.005        -\n")
+		else:
+			text_file.write("CMS_JER lnN                    1.01        -\n")
+		text_file.write("CMS_PU lnN                    1.01       -\n")
 #                text_file.write("CMS_eff_trig shapeN2           1.000   -\n")
-#               text_file.write("CMS_eff_trig lnN           %f   -\n"%(TRIGlnN))	 	
+		text_file.write("CMS_eff_trig lnN           1.001   -\n")	 	
 		#text_file.write("CMS_scale"+Options.name+"_13TeV shapeN2                           -       1.000\n")
-		text_file.write("CMS_PDF_Scales lnN   %f/%f        -\n"%(PDFup,PDFdown))
+		text_file.write("CMS_PDF lnN   1.025        -\n")
+		text_file.write("CMS_Scales lnN   1.002        -\n")
 
 #		for bin in range(0,len(binBoundaries)-1):
 #			text_file.write("CMS_stat"+Options.name+"_13TeV_bin%s shapeN2                           -       1.000\n"%(bin))
@@ -322,17 +335,21 @@ if Options.workspace == "alphabet":
 
                 text_filea.write("CMS_eff_tau21_sf lnN                    1.30/0.74       -\n") #(0.028/0.979)
                 text_filea.write("CMS_eff_Htag lnN                    %f       -\n"%(HTaggingUnc))
-                text_filea.write("CMS_JEC lnN                 %f        -\n"%(FJEClnN))
-                text_filea.write("CMS_massJEC lnN                 %f        -\n"%(MJEClnN))
-                text_filea.write("CMS_eff_bbtag_sf lnN                    %f/%f       -\n"%(btaglnNdown,btaglnNup))
-                text_filea.write("CMS_JER lnN                    %f        -\n"%(FJERlnN))
-                text_filea.write("CMS_PU lnN                    %f        -\n"%(PUlnN))
+                text_filea.write("CMS_JEC lnN                 1.02        -\n")
+                #text_filea.write("CMS_massJEC lnN                 %f        -\n"%(MJEClnN))
+                text_filea.write("CMS_eff_bbtag_sf lnN                    %f/%f       -\n"%(btaglnNup,btaglnNdown))
+                if Options.LL_DoubleB_Region:
+			text_filea.write("CMS_JER lnN                    1.005        -\n")
+                else:
+			text_filea.write("CMS_JER lnN                    1.01        -\n")
+		text_filea.write("CMS_PU lnN                    1.01        -\n")
+		text_filea.write("CMS_eff_trig lnN           1.001   -\n")	 	
 #                text_filea.write("CMS_eff_trig shapeN2           1.000   -\n")
 #               text_filea.write("CMS_eff_trig lnN           %f   -\n"%(TRIGlnN))
                 if Options.LL_DoubleB_Region:	
-		  text_filea.write("bgSB_norm_LL rateParam HH4b "+Options.name+"EST_antitag 3104.27800006  \n")
+		  text_filea.write("bgSB_norm_LL rateParam HH4b "+Options.name+"EST_antitag 5639.87800009  \n")
 		else:
-		  text_filea.write("bgSB_norm_TT rateParam HH4b "+Options.name+"EST_antitag 1171.45600007 \n")
+		  text_filea.write("bgSB_norm_TT rateParam HH4b "+Options.name+"EST_antitag 2179.0570001 \n")
 	
 		
 

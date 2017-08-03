@@ -110,13 +110,13 @@ variable2 = "dijetmass_softdrop_corr"
 #variable = "dijetmass_corr"
 
 
-sigpath = "/afs/cern.ch/work/c/chchen/public/dbtSFTriggerBits/"
+sigpath = "/afs/cern.ch/work/c/chchen/HHbbbbAnalyzer/8022_v1/uncert_PDFuncert/dbt/"
 
 
 if Options.workspace == "alphabet":
 	print "creating workspace and datacard: ALPHABET"
 
-	mass=[1200,1400,1600,1800,2000, 2500, 3000]
+	mass=[1200,1600,1800,2000, 2500, 3000]
 	for m in mass:
 		print str(m)
 		SF_tau21 = 1.03*1.03
@@ -141,8 +141,8 @@ if Options.workspace == "alphabet":
 		Signal_mX_MJEC_Up = TH1F("Signal_mX_%s_"%(m)+Options.name+"_CMS_eff_massJECUp", "", len(binBoundaries)-1, array('d',binBoundaries))
 		Signal_mX_MJEC_Down = TH1F("Signal_mX_%s_"%(m)+Options.name+"_CMS_eff_massJECDown", "", len(binBoundaries)-1, array('d',binBoundaries))
 		
-                quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX, variable2, TightT,"puWeightsDown*dbtSF/1.")
-                quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX_antitag, variable2, TightAT,"puWeightsDown*dbtSF/1.")
+                quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX, variable2, TightT,"puWeights*dbtSF*pdfSF[1]")
+                quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX_antitag, variable2, TightAT,"puWeights*dbtSF*pdfSF[1]")
                 quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX_btag_up, variable2, TightT,"puWeights*dbtSFup/1.")
                 quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX_btag_down, variable2, TightT,"puWeights*dbtSFdown/1.")
                 quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX_trig_up, variable2, TightT,"trigWeightUp_Update*puWeights*dbtSF/1.")
@@ -267,19 +267,19 @@ if Options.workspace == "alphabet":
 		text_file.write("process                                         Signal_mX_%s_"%(m)+Options.name+"  "+Options.name+"EST\n")
 		text_file.write("rate                                            %f  1.00\n"%(signal_integral))
 		text_file.write("-------------------------------------------------------------------------------\n")
-		text_file.write("lumi_13TeV lnN                          1.025       -\n")	
+		# text_file.write("lumi_13TeV lnN                          1.025       -\n")	
 	
-		text_file.write("CMS_eff_tau21_sf lnN                    1.30/0.74        -\n") #(0.028/0.979)
-		text_file.write("CMS_eff_Htag lnN                    %f       -\n"%(HTaggingUnc))
-		text_file.write("CMS_JEC lnN 		     %f        -\n"%(FJEClnN)) 	
-		text_file.write("CMS_massJEC lnN                 %f        -\n"%(MJEClnN))
-		text_file.write("CMS_eff_bbtag_sf lnN                    %f/%f       -\n"%(btaglnNup,btaglnNdown))
-		text_file.write("CMS_JER lnN                    %f        -\n"%(FJERlnN))
-		text_file.write("CMS_PU lnN                    %f        -\n"%(PUlnN))
-#                text_file.write("CMS_eff_trig shapeN2           1.000   -\n")
-#               text_file.write("CMS_eff_trig lnN           %f   -\n"%(TRIGlnN))	 	
-		#text_file.write("CMS_scale"+Options.name+"_13TeV shapeN2                           -       1.000\n")
-		text_file.write("CMS_PDF_Scales lnN   %f/%f        -\n"%(PDFup,PDFdown))
+		# text_file.write("CMS_eff_tau21_sf lnN                    1.30/0.74        -\n") #(0.028/0.979)
+		# text_file.write("CMS_eff_Htag lnN                    %f       -\n"%(HTaggingUnc))
+		# text_file.write("CMS_JEC lnN 		     %f        -\n"%(FJEClnN)) 	
+		# text_file.write("CMS_massJEC lnN                 %f        -\n"%(MJEClnN))
+		# text_file.write("CMS_eff_bbtag_sf lnN                    %f/%f       -\n"%(btaglnNup,btaglnNdown))
+		# text_file.write("CMS_JER lnN                    %f        -\n"%(FJERlnN))
+		# text_file.write("CMS_PU lnN                    %f        -\n"%(PUlnN))
+# #                text_file.write("CMS_eff_trig shapeN2           1.000   -\n")
+# #               text_file.write("CMS_eff_trig lnN           %f   -\n"%(TRIGlnN))	 	
+		# #text_file.write("CMS_scale"+Options.name+"_13TeV shapeN2                           -       1.000\n")
+		# text_file.write("CMS_PDF_Scales lnN   %f/%f        -\n"%(PDFup,PDFdown))
 
 #		for bin in range(0,len(binBoundaries)-1):
 #			text_file.write("CMS_stat"+Options.name+"_13TeV_bin%s shapeN2                           -       1.000\n"%(bin))
@@ -318,15 +318,15 @@ if Options.workspace == "alphabet":
                 text_filea.write("rate                                            %f    1.0000  \n"%(signal_integral_anti))
                 text_filea.write("-------------------------------------------------------------------------------\n")
 
-	        text_filea.write("lumi_13TeV lnN                          1.025       -\n")
+	        # text_filea.write("lumi_13TeV lnN                          1.025       -\n")
 
-                text_filea.write("CMS_eff_tau21_sf lnN                    1.30/0.74       -\n") #(0.028/0.979)
-                text_filea.write("CMS_eff_Htag lnN                    %f       -\n"%(HTaggingUnc))
-                text_filea.write("CMS_JEC lnN                 %f        -\n"%(FJEClnN))
-                text_filea.write("CMS_massJEC lnN                 %f        -\n"%(MJEClnN))
-                text_filea.write("CMS_eff_bbtag_sf lnN                    %f/%f       -\n"%(btaglnNdown,btaglnNup))
-                text_filea.write("CMS_JER lnN                    %f        -\n"%(FJERlnN))
-                text_filea.write("CMS_PU lnN                    %f        -\n"%(PUlnN))
+                # text_filea.write("CMS_eff_tau21_sf lnN                    1.30/0.74       -\n") #(0.028/0.979)
+                # text_filea.write("CMS_eff_Htag lnN                    %f       -\n"%(HTaggingUnc))
+                # text_filea.write("CMS_JEC lnN                 %f        -\n"%(FJEClnN))
+                # text_filea.write("CMS_massJEC lnN                 %f        -\n"%(MJEClnN))
+                # text_filea.write("CMS_eff_bbtag_sf lnN                    %f/%f       -\n"%(btaglnNdown,btaglnNup))
+                # text_filea.write("CMS_JER lnN                    %f        -\n"%(FJERlnN))
+                # text_filea.write("CMS_PU lnN                    %f        -\n"%(PUlnN))
 #                text_filea.write("CMS_eff_trig shapeN2           1.000   -\n")
 #               text_filea.write("CMS_eff_trig lnN           %f   -\n"%(TRIGlnN))
                 if Options.LL_DoubleB_Region:	

@@ -1,0 +1,479 @@
+
+Processing Display_SignalFits_LL_Data.cc("outputs/datacards/","","HH_mX_HH_LL_Data_",1200, 1,false,false)...
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+ starting with 1200
+ file input _13TeV.root
+ OPENING FILE: outputs/datacards//HH_mX_HH_LL_Data_1200_13TeV.root
+Loading histograms
+looking for Signal_mX_1200_HH_LL_Data
+#0  0x00007f937507e45a in __GI___waitpid (pid=11350, stat_loc=stat_loc
+entry=0x7ffd7a7e1710, options=options
+entry=0) at ../sysdeps/unix/sysv/linux/waitpid.c:29
+#1  0x00007f9374ff72cb in do_system (line=<optimized out>) at ../sysdeps/posix/system.c:148
+#2  0x00007f9375bed569 in TUnixSystem::Exec (shellcmd=<optimized out>, this=0x5630fc15a4f0) at /home/nstar/root-6.08.06_build/core/unix/src/TUnixSystem.cxx:2118
+#3  TUnixSystem::StackTrace (this=0x5630fc15a4f0) at /home/nstar/root-6.08.06_build/core/unix/src/TUnixSystem.cxx:2405
+#4  0x00007f93716d44e5 in cling::MultiplexInterpreterCallbacks::PrintStackTrace() () from /home/nstar/root-6.08.06/lib/libCling.so
+#5  0x00007f93716d3e88 in cling_runtime_internal_throwIfInvalidPointer () from /home/nstar/root-6.08.06/lib/libCling.so
+#6  0x00007f936990f27a in ?? ()
+#7  0x0000000000000002 in ?? ()
+#8  0xffff80028581c531 in ?? ()
+#9  0x00007ffd7a7e3e78 in ?? ()
+#10 0x0000000000000000 in ?? ()
+Error in <HandleInterpreterException>: Trying to dereference null pointer or trying to call routine taking non-null arguments.
+Execution of your code was aborted.
+In file included from input_line_8:1:
+/home/nstar/ths_HH4b/limitSetting/stepAA/Display_SignalFits_LL_Data.cc:227:4: warning: null passed to a callee that requires a non-null argument [-Wnonnull]
+                        h_mX_SR->SetTitle(("m_{X} Peak in Signal MC (m_{X}="+masses.at(i)+" GeV); m_{X} (GeV)").c_str());
+                        ^~~~~~~
+
+Processing Display_SignalFits_LL_Data.cc("outputs/datacards/","","HH_mX_HH_LL_Data_",1200, 1,true,false)...
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+ starting with 1200
+ file input _13TeV.root
+ OPENING FILE: outputs/datacards//HH_mX_HH_LL_Data_1200_13TeV.root
+Loading histograms
+looking for vh/Signal_mX_antitag_1200HH_LL_Data
+ FILE OPENED, DONE!: 
+distribs_5_10_0__x
+first
+Title
+rebin
+ norm = 1.23742
+Warning in <TH1F::Sumw2>: Sum of squares of weights structure already created
+[#1] INFO:DataHandling -- RooDataHist::adjustBinning(signalHistogram): fit range of variable x expanded to nearest bin boundaries: [600,3600] --> [1100,2999]
+[#0] WARNING:InputArguments -- RooAbsPdf::fitTo(signal) WARNING: a likelihood fit is request of what appears to be weighted data. 
+       While the estimated values of the parameters will always be calculated taking the weights into account, 
+       there are multiple ways to estimate the errors on these parameter values. You are advised to make an 
+       explicit choice on the error calculation: 
+           - Either provide SumW2Error(kTRUE), to calculate a sum-of-weights corrected HESSE error matrix 
+             (error will be proportional to the number of events)
+           - Or provide SumW2Error(kFALSE), to return errors from original HESSE error matrix
+             (which will be proportional to the sum of the weights)
+       If you want the errors to reflect the information contained in the provided dataset, choose kTRUE. 
+       If you want the errors to reflect the precision you would be able to obtain with an unweighted dataset 
+       with 'sum-of-weights' events, choose kFALSE.
+[#1] INFO:Eval -- RooRealVar::setRange(x) new range named 'fit' created with bounds [840,1560]
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_signal_signalHistogram) constructing test statistic for sub-range named fit
+[#1] INFO:Eval -- RooRealVar::setRange(x) new range named 'NormalizationRangeForfit' created with bounds [1100,2999]
+[#1] INFO:Eval -- RooRealVar::setRange(x) new range named 'fit_nll_signal_signalHistogram' created with bounds [840,1560]
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_signal_signalHistogram) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (signalCore,signalComb)
+ **********
+ **    1 **SET PRINT           1
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 sg_p0        1.20000e+03  2.40000e+01    1.08000e+03  1.32000e+03
+     2 sg_p1        3.60000e+01  1.55000e+01    5.00000e+00  4.00000e+02
+     3 sg_p2        1.30000e+00  6.50000e-01    0.00000e+00  2.00000e+02
+     4 sg_p3        5.00000e+00  2.50000e+00    0.00000e+00  3.00000e+02
+     5 sg_p5        1.50000e+02  7.50000e+01    0.00000e+00  3.00000e+03
+     6 sg_p6        9.90000e-01  5.00000e-03    0.00000e+00  1.00000e+00
+ **********
+ **    3 **SET ERR         0.5
+ **********
+ **********
+ **    4 **SET PRINT           1
+ **********
+ **********
+ **    5 **SET STR           1
+ **********
+ NOW USING STRATEGY  1: TRY TO BALANCE SPEED AGAINST RELIABILITY
+ **********
+ **    6 **MIGRAD        3000           1
+ **********
+ FIRST CALL TO USER FUNCTION AT NEW START POINT, WITH IFLAG=4.
+ START MIGRAD MINIMIZATION.  STRATEGY  1.  CONVERGENCE WHEN EDM .LT. 1.00e-03
+ FCN=13.2319 FROM MIGRAD    STATUS=INITIATE       22 CALLS          23 TOTAL
+                     EDM= unknown      STRATEGY= 1      NO ERROR MATRIX       
+  EXT PARAMETER               CURRENT GUESS       STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  sg_p0        1.20000e+03   2.40000e+01   2.01358e-01  -9.77915e-01
+   2  sg_p1        3.60000e+01   1.55000e+01   1.50810e-01  -3.08303e+00
+   3  sg_p2        1.30000e+00   6.50000e-01   4.18636e-02  -8.68818e-01
+   4  sg_p3        5.00000e+00   2.50000e+00   6.73659e-02  -3.78317e-01
+   5  sg_p5        1.50000e+02   7.50000e+01   1.18625e-01  -1.27424e-01
+   6  sg_p6        9.90000e-01   5.00000e-03   5.20130e-02   5.03145e-01
+                               ERR DEF= 0.5
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ COVARIANCE MATRIX CALCULATED SUCCESSFULLY
+ FCN=12.9496 FROM MIGRAD    STATUS=CONVERGED     195 CALLS         196 TOTAL
+                     EDM=0.000126971    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  sg_p0        1.20091e+03   3.39187e+01   7.14912e-04   1.27974e-02
+   2  sg_p1        5.02090e+01   2.94245e+01   5.21807e-04  -1.04746e-02
+   3  sg_p2        3.54931e+00   1.24326e+02   2.36963e-03  -6.46615e-03
+   4  sg_p3        1.79930e+01   1.64582e+02   8.97984e-02  -1.18620e-04
+   5  sg_p5        1.78297e+02   1.99638e+03   2.60557e-03  -5.20449e-03
+   6  sg_p6        9.81156e-01   8.13524e-01   2.55639e-03   4.54373e-03
+                               ERR DEF= 0.5
+ EXTERNAL ERROR MATRIX.    NDIM=  25    NPAR=  6    ERR DEF=0.5
+  1.182e+03  1.692e+02  3.837e-01  2.749e+00  3.719e+03  1.243e+00 
+  1.692e+02  8.821e+02  9.488e-01  1.603e+00  1.445e+04  3.221e+00 
+  3.837e-01  9.488e-01  1.251e+03 -3.403e+04  6.141e+01  1.386e-02 
+  2.749e+00  1.603e+00 -3.403e+04  7.089e+06  3.602e+02  8.192e-02 
+  3.719e+03  1.445e+04  6.141e+01  3.602e+02  1.707e+06  2.112e+02 
+  1.243e+00  3.221e+00  1.386e-02  8.192e-02  2.112e+02  4.683e-02 
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      1      2      3      4      5      6
+        1  0.20204   1.000  0.166  0.000  0.000  0.083  0.167
+        2  0.50802   0.166  1.000  0.001  0.000  0.372  0.501
+        3  0.36126   0.000  0.001  1.000 -0.361  0.001  0.002
+        4  0.36125   0.000  0.000 -0.361  1.000  0.000  0.000
+        5  0.74795   0.083  0.372  0.001  0.000  1.000  0.747
+        6  0.78771   0.167  0.501  0.002  0.000  0.747  1.000
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[#1] INFO:InputArguments -- RooAbsData::plotOn(signalHistogram) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(signal) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(signal) only plotting range 'fit_nll_signal_signalHistogram'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(signal) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_signal_signalHistogram'
+[#1] INFO:ObjectHandling -- RooWorkspace::import(HH4b) importing RooAddPdf::signal_fixed_antitag_
+[#1] INFO:ObjectHandling -- RooWorkspace::import(HH4b) importing RooCBShape::signalCore_fixed_
+[#1] INFO:ObjectHandling -- RooWorkspace::import(HH4b) importing RooRealVar::x
+[#1] INFO:ObjectHandling -- RooWorkspace::import(HH4b) importing RooRealVar::signal_p0_
+[#1] INFO:ObjectHandling -- RooWorkspace::import(HH4b) importing RooRealVar::signal_p1_
+[#1] INFO:ObjectHandling -- RooWorkspace::import(HH4b) importing RooRealVar::signal_p2_
+[#1] INFO:ObjectHandling -- RooWorkspace::import(HH4b) importing RooRealVar::signal_p3_
+[#1] INFO:ObjectHandling -- RooWorkspace::import(HH4b) importing RooRealVar::signal_p6_
+[#1] INFO:ObjectHandling -- RooWorkspace::import(HH4b) importing RooGaussian::signalComb_fixed_
+[#1] INFO:ObjectHandling -- RooWorkspace::import(HH4b) importing RooRealVar::signal_p5_
+Info in <RooWorkspace::SaveAs>: ROOT file outputs/datacards//w_signal_antitag_LL_1200.root has been created
+
+RooWorkspace(HH4b) HH4b contents
+
+variables
+---------
+(signal_p0_,signal_p1_,signal_p2_,signal_p3_,signal_p5_,signal_p6_,x)
+
+p.d.f.s
+-------
+RooGaussian::signalComb_fixed_[ x=x mean=signal_p0_ sigma=signal_p5_ ] = 3.00781e-06
+RooCBShape::signalCore_fixed_[ m=x m0=signal_p0_ sigma=signal_p1_ alpha=signal_p2_ n=signal_p3_ ] = 2.33954e-70
+RooAddPdf::signal_fixed_antitag_[ signal_p6_ * signalCore_fixed_ + [%] * signalComb_fixed_ ] = 5.66802e-08
+
+middle
+27.2 fb^{-1} (2016) (13 TeV)
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 0 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 1 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 2 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 5 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 7 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 10 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 11 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 14 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 17 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 18 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 22 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 23 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 28 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 30 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 38 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 47 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 50 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 53 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 55 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 62 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 71 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 86 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 88 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 94 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 96 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 98 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 111 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 112 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 116 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 127 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 131 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 134 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 147 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 148 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 150 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 151 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 154 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 155 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 157 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 161 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 162 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 164 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 166 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 171 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 173 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 174 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 175 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 176 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 178 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 179 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 180 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 184 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 186 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 188 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 193 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 194 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 198 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 199 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 200 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 202 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 203 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 205 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 206 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 207 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 208 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 209 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 211 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 212 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 213 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 214 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 215 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 217 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 218 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 219 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 220 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 221 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 222 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 223 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 224 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 225 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 226 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 227 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 228 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 229 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 230 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 232 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 233 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 234 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 235 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 236 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 237 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 238 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 239 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 240 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 241 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 242 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 243 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 244 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 245 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 246 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 247 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 248 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 250 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 251 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 252 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 253 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 254 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 255 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 256 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 257 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 258 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 259 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 260 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 261 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 262 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 263 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 264 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 265 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 266 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 267 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 268 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 269 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 270 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 271 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 272 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 273 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 275 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 277 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 278 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 279 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 280 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 281 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 282 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 283 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 284 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 285 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 286 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 287 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 288 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 289 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 290 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 291 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 292 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 293 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 294 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 295 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 296 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 297 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 298 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 299 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 300 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 301 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 302 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 303 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 304 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 305 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 306 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 307 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 308 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 309 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 310 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 311 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 312 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 313 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 314 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 315 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 316 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 317 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 318 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 319 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 320 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 321 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 322 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 323 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 324 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 325 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 326 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 327 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 328 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 329 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 330 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 331 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 332 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 333 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 334 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 335 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 336 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 337 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 338 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 339 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 340 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 341 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 342 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 343 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 344 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 345 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 346 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 347 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 348 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 349 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 350 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 351 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 352 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 353 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 354 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 355 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 356 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 357 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 358 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 359 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 360 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 361 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 362 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 363 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 364 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 365 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 366 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 367 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 368 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 369 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 370 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 371 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 372 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 373 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 374 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 375 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 376 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 377 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 378 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 379 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 380 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 381 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 382 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 383 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 384 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 385 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 386 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 387 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 388 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 389 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 391 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 392 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 393 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 394 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 395 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 396 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 397 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 398 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 399 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 400 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 401 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 402 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 403 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 404 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 405 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 406 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 407 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 408 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 409 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 410 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 411 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 412 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 413 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 414 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 415 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 416 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 417 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 418 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 419 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 420 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 421 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 422 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 423 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 424 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 425 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 426 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 427 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 428 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 429 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 430 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 431 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 432 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 433 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 434 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 435 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 436 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 437 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 438 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 439 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 440 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 441 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 442 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 443 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 444 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 445 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 446 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 447 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 448 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 449 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 450 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 451 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 452 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 453 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 454 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 455 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 456 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 457 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 458 has zero error, setting residual to zero
+[#0] WARNING:Plotting -- RooHist::makeResisHist(h_signalHistogram) WARNING: point 459 has zero error, setting residual to zero
+Info in <TCanvas::Print>: png file outputs/datacards//c_mX_SR_1200.png has been created

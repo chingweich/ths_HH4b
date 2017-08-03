@@ -110,13 +110,13 @@ variable2 = "dijetmass_softdrop_corr"
 #variable = "dijetmass_corr"
 
 
-sigpath = "/afs/cern.ch/work/c/chchen/public/dbtSFTriggerBits/"
+sigpath = "/afs/cern.ch/work/c/chchen/HHbbbbAnalyzer/8022_v1/uncert_PDFuncert/dbt/"
 
 
 if Options.workspace == "alphabet":
 	print "creating workspace and datacard: ALPHABET"
 
-	mass=[1200,1400,1600,1800,2000, 2500, 3000]
+	mass=[1200,1600,1800,2000, 2500, 3000]
 	for m in mass:
 		print str(m)
 		SF_tau21 = 1.03*1.03
@@ -141,8 +141,8 @@ if Options.workspace == "alphabet":
 		Signal_mX_MJEC_Up = TH1F("Signal_mX_%s_"%(m)+Options.name+"_CMS_eff_massJECUp", "", len(binBoundaries)-1, array('d',binBoundaries))
 		Signal_mX_MJEC_Down = TH1F("Signal_mX_%s_"%(m)+Options.name+"_CMS_eff_massJECDown", "", len(binBoundaries)-1, array('d',binBoundaries))
 		
-                quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX, variable2, TightT,"puWeightsDown*dbtSF/1.")
-                quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX_antitag, variable2, TightAT,"puWeightsDown*dbtSF/1.")
+                quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX, variable2, TightT,"puWeights*dbtSF*pdfSF[1]")
+                quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX_antitag, variable2, TightAT,"puWeights*dbtSF*pdfSF[1]")
                 quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX_btag_up, variable2, TightT,"puWeights*dbtSFup/1.")
                 quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX_btag_down, variable2, TightT,"puWeights*dbtSFdown/1.")
                 quickplot(sigpath+"BulkGrav_M-%s_0.root"%(m), "mynewTree", Signal_mX_trig_up, variable2, TightT,"trigWeightUp_Update*puWeights*dbtSF/1.")

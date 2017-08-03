@@ -85,7 +85,7 @@ RooPlot* fitSignal(std::string dirName, TH1D *h, int massNum, std::string mass, 
     
     double massL = double(massNum);
     double rangeLo=TMath::Max(600., massL-0.3*massL), rangeHi=TMath::Min(3600., massL+0.3*massL);
-    
+    rangeLo=600;
     sg_p0=new RooRealVar((std::string("sg_p0")).c_str(), "sg_p0", massL, massL-0.1*massL, massL+0.1*massL);
     sg_p1=new RooRealVar((std::string("sg_p1")).c_str(), "sg_p1", 0.03*massL, 5., 400.);
     sg_p2=new RooRealVar((std::string("sg_p2")).c_str(), "sg_p2", 1.3, 0., 200.);
@@ -115,7 +115,7 @@ RooPlot* fitSignal(std::string dirName, TH1D *h, int massNum, std::string mass, 
     if (color==kBlack)
     {
         signalHistogram.plotOn(plot, RooFit::MarkerColor(color), RooFit::MarkerSize(1.2));
-        signal.plotOn(plot, RooFit::LineColor(color), RooFit::LineWidth(3));
+        signal.plotOn(plot, RooFit::LineColor(kRed), RooFit::LineWidth(3));
     }
     else
     {
@@ -161,6 +161,28 @@ double lnN(double b, double a, double c)
     return err;
 }
 
+void setTH(RooPlot * h_data){
+	h_data->SetTitle("");
+	h_data->SetLineWidth(2);
+	//h_data->SetMaximum(3000);
+ h_data->SetMarkerSize(1.6);
+
+ h_data->GetYaxis()->SetTitleOffset(1.5);
+ h_data->GetXaxis()->SetTitleOffset(1.5);
+ // size of axis labels
+ h_data->GetXaxis()->SetTitleSize(0.04);
+ h_data->GetYaxis()->SetTitleSize(0.04);
+ //h_data->GetZaxis()->SetTitleSize(0.035);
+ h_data->GetXaxis()->SetLabelSize(0.04);
+ h_data->GetYaxis()->SetLabelSize(0.04); 
+ //h_data->GetZaxis()->SetLabelSize(0.025);
+ 
+//h_data->SetPadRightMargin(0.029);
+//h_data->SetPadLeftMargin(0.1509);
+h_data->GetXaxis()->SetNdivisions(510, "XYZ");
+h_data->GetYaxis()->SetNdivisions(510, "XYZ");
+}
+
 int Display_SignalFits_LL_Data(std::string dir_preselection="outputs/datacards/",
                        std::string dir_selection="",
                        std::string file_histograms="HH_mX_HH_LL_Data",
@@ -193,7 +215,7 @@ int Display_SignalFits_LL_Data(std::string dir_preselection="outputs/datacards/"
     gStyle->SetPadGridX(0);
     gStyle->SetPadGridY(0);
     gStyle->SetOptStat(0000);
-    setTDRStyle();
+   // setTDRStyle();
     
     // Calculate nSignal events given production cross section, branching fractions and efficiency
     //double totalLumi=2.690; // /fb
@@ -217,13 +239,13 @@ int Display_SignalFits_LL_Data(std::string dir_preselection="outputs/datacards/"
 	if (antitag)
 		{
 			std::cout<<"looking for "<<("vh/Signal_mX_antitag_"+masses.at(i)+"HH_LL_Data").c_str()<<std::endl;
-			h_mX_SR=(TH1D*)file->Get(("vh/Signal_mX_antitag_"+masses.at(i)+From("HH_LL_Data%s",uncert.data())).c_str());
+			h_mX_SR=(TH1D*)file->Get(("vh/Signal_mX_antitag_"+masses.at(i)+Form("HH_LL_Data%s",uncert.data())).c_str());
 			h_mX_SR->SetTitle(("m_{X} Peak in Signal MC (m_{X}="+masses.at(i)+" GeV); m_{X} (GeV)").c_str());
 		}
 	else
 		{
 			std::cout<<"looking for "<<("Signal_mX_"+masses.at(i)+"_HH_LL_Data").c_str()<<std::endl;
-			h_mX_SR=(TH1D*)file->Get(("vh/Signal_mX_"+masses.at(i)+From("HH_LL_Data%s",uncert.data())).c_str());
+			h_mX_SR=(TH1D*)file->Get(("vh/Signal_mX_"+masses.at(i)+Form("HH_LL_Data%s",uncert.data())).c_str());
 			h_mX_SR->SetTitle(("m_{X} Peak in Signal MC (m_{X}="+masses.at(i)+" GeV); m_{X} (GeV)").c_str());
 		}
 	std::cout<<" FILE OPENED, DONE!: "<<std::endl;
@@ -231,6 +253,7 @@ int Display_SignalFits_LL_Data(std::string dir_preselection="outputs/datacards/"
         
         double nSignal_init=1.0;
         double xPad = 0.3;
+		/*
         TCanvas *c_mX_SR=new TCanvas(("c_mX_SR_"+masses.at(i)).c_str(), ("c_mX_SR_"+masses.at(i)+"HH_LL_Data").c_str(), 700*(1.-xPad), 700);
         TPad *p_1=new TPad("p_1", "p_1", 0, xPad, 1, 1);
         p_1->SetFillStyle(4000);
@@ -250,9 +273,16 @@ int Display_SignalFits_LL_Data(std::string dir_preselection="outputs/datacards/"
         p_1->Draw();
         p_2->Draw();
         p_1->cd();
-	std::cout<<"first"<<std::endl;
-        	
-	std::cout<<"Title"<<std::endl;
+		*/
+		
+		gStyle->SetPadRightMargin(0.039);
+gStyle->SetPadLeftMargin(0.129);
+gStyle->SetNdivisions(605, "XYZ");
+gStyle->SetOptStat(0);
+TCanvas* c_mX_SR=new TCanvas("c","",0,0,600,600);
+gStyle->SetPadRightMargin(0.029);
+gStyle->SetPadLeftMargin(0.1509);
+		
         h_mX_SR->Rebin(rebin);
 	std::cout<<"rebin"<<std::endl;
         std::cout<<" norm = "<<h_mX_SR->Integral(h_mX_SR->FindBin(1200),h_mX_SR->FindBin(2500))<<std::endl;	
@@ -281,11 +311,11 @@ int Display_SignalFits_LL_Data(std::string dir_preselection="outputs/datacards/"
         v_sg_p5.push_back(params_vg.sg_p5); v_sg_p5_err.push_back(params_vg.sg_p5_err);
         v_sg_p6.push_back(params_vg.sg_p6); v_sg_p6_err.push_back(params_vg.sg_p6_err);
         
-
+		setTH(plot_vg);
         
         plot_vg->SetTitle("");
-        plot_vg->GetYaxis()->SetRangeUser(0.01, 100);
-        plot_vg->GetXaxis()->SetRangeUser(imass-400, imass+400);
+        plot_vg->GetYaxis()->SetRangeUser(0.0001, 1);
+        //plot_vg->GetXaxis()->SetRangeUser(600, 1500);
         plot_vg->GetXaxis()->SetLabelOffset(0.03);
         plot_vg->GetXaxis()->SetNdivisions(505);
 	std::cout<<"middle"<<std::endl;
@@ -295,16 +325,16 @@ int Display_SignalFits_LL_Data(std::string dir_preselection="outputs/datacards/"
         leg->SetFillColor(0);
         leg->Draw();
         
-        CMS_lumi(p_1, iPeriod, iPos );
+        //CMS_lumi(p_1, iPeriod, iPos );
         
-        p_2->cd();
+        /*p_2->cd();
         RooHist* hpull;
         hpull = plot_vg->pullHist();
         RooRealVar* x=new RooRealVar("x", "m_{X} (GeV)", 1000, 3000);
 
         RooPlot* frameP = x->frame() ;
         frameP->SetTitle("");
-        frameP->GetXaxis()->SetRangeUser(1000,3000);
+        frameP->GetXaxis()->SetRangeUser(imass-400, imass+400);
 
         frameP->addPlotable(hpull,"P");
         frameP->GetYaxis()->SetRangeUser(-5,5);
@@ -321,13 +351,13 @@ int Display_SignalFits_LL_Data(std::string dir_preselection="outputs/datacards/"
         
         frameP->Draw();
         
+        */
+        c_mX_SR->SaveAs((dirName+"/c_mX_SR_LL_"+masses.at(i)+".png").c_str());
+        c_mX_SR->SaveAs((dirName+"/c_mX_SR_LL_"+masses.at(i)+".root").c_str());
+        c_mX_SR->SetLogy();
         
-        c_mX_SR->SaveAs((dirName+"/c_mX_SR_"+masses.at(i)+".png").c_str());
-        c_mX_SR->SaveAs((dirName+"/c_mX_SR_"+masses.at(i)+".root").c_str());
-        p_1->SetLogy();
-        
-        c_mX_SR->SaveAs((dirName+"/c_mX_SR_"+masses.at(i)+"Log.png").c_str());
-        c_mX_SR->SaveAs((dirName+"/c_mX_SR_"+masses.at(i)+"Log.root").c_str());
+        c_mX_SR->SaveAs((dirName+"/c_mX_SR_LL_"+masses.at(i)+"Log.png").c_str());
+        c_mX_SR->SaveAs((dirName+"/c_mX_SR_LL_"+masses.at(i)+"Log.root").c_str());
 	std::cout<<"last"<<std::endl;
         
     }
