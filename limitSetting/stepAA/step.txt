@@ -1,13 +1,23 @@
+
+Ntuple: /storedNtuple
+
+minitree maker:
+signal: https://github.com/chingweich/HHbbbbAnalyzer/blob/master/8022_v1/miniTree/skimTreeJER.C
+data:   /minitreeMaker
+
+make data histograms:
 python HHSRAlphabet_fit_ReReco_fast.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.3 & (!( jet1bbtag > 0.8 & jet2bbtag > 0.8))" --Cut 0.3 --name HH_LL_Data --log True
-
 python HHSRAlphabet_fit_ReReco_fast.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.8" --Cut 0.8 --name HH_TT_Data --log True --TT
-
+make signal histograms:
 python HHSRAlphabet_fit_ReReco_signal.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.3 & (!( jet1bbtag > 0.8 & jet2bbtag > 0.8))" --Cut 0.3 --name HH_LL_Data --log True
 python HHSRAlphabet_fit_ReReco_signal.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.8" --Cut 0.8 --name HH_TT_Data --log True --TT
+fit to data histograms:
 root -l -b -q Background_fast.c 
 root -l -b -q Background_fast_LL.c 
+fit to signal histograms:
 bash runSignal_LL_Data.sh
 bash runSignal_TT_Data.sh
+combine data cards and set limit:
 bash runLimits_bump_BothCategories.sh 
 
 
