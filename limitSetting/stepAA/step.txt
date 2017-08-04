@@ -5,6 +5,7 @@ canvus: https://github.com/chingweich/ths_HH4b/blob/master/N1/MCcompare.root
 AN300- uncertainties JER,JEC: https://github.com/chingweich/HHbbbbAnalyzer/tree/master/8022_v1/miniTree/JER
 
 Ntuple: https://github.com/chingweich/ths_HH4b/blob/master/limitSetting/stepAA/storedNtuple
+QCD :https://github.com/chingweich/HHbbbbAnalyzer/tree/master/8022_v1/gfal-copy
 
 minitree maker:
 signal: https://github.com/chingweich/ths_HH4b/blob/master/limitSetting/stepAA/minitreeMaker/skimTreeJER.C
@@ -15,6 +16,7 @@ data:   https://github.com/chingweich/ths_HH4b/blob/master/limitSetting/stepAA/m
 minitrees:
 signal: "/afs/cern.ch/work/c/chchen/public/dbtSFTriggerBits/"
 data: /afs/cern.ch/work/c/chchen/public/reMin.root
+QCD: /afs/cern.ch/work/c/chchen/public/Summer2016QCD/
 
 make data histograms:
 python HHSRAlphabet_fit_ReReco_fast.py --Selection "jet2_puppi_msoftdrop_TheaCorr > 105 & jet2_puppi_msoftdrop_TheaCorr < 135  & jet2bbtag > 0.3 & (!( jet1bbtag > 0.8 & jet2bbtag > 0.8))" --Cut 0.3 --name HH_LL_Data --log True
